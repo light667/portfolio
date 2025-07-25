@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio | DJOSSOU Kokou Armand Light</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<body>
+  <canvas id="bg-particles"></canvas>
+  <header class="main-header">
+    <div class="header-content">
+      <img src="photo.jpg" alt="DJOSSOU Kokou Armand Light" class="profile-photo">
+      <div class="header-text">
+        <h1>DJOSSOU Kokou Armand Light</h1>
+        <h2>Étudiant en Intelligence Artificielle & Big Data</h2>
+        <p class="accroche">Passionné par l'innovation, la technologie et la résolution de problèmes complexes.</p>
+        <div class="header-links">
+          <a href="https://github.com/light667" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+          <a href="https://www.linkedin.com/in/kokou-light-djossou-90216233b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+          <a href="https://wa.me/22870703111" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+          <a href="mailto:nethaniahdjossou@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
+          <a href="https://facebook.com/LightsNethaniah" target="_blank" title="Facebook"><i class="fab fa-facebook"></i></a>
+          <a href="https://instagram.com/thelight667" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="https://twitter.com/NethaniahD36065" target="_blank" title="Twitter"><i class="fab fa-twitter"></i></a>
+          <a href="https://youtube.com/@Thelight_667" target="_blank" title="YouTube"><i class="fab fa-youtube"></i></a>
+        </div>
+        <div class="badges">
+          <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white" alt="HTML5">
+          <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white" alt="CSS3">
+          <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python">
+          <img src="https://img.shields.io/badge/Flutter-02569B?style=for-the-badge&logo=flutter&logoColor=white" alt="Flutter">
+          <img src="https://img.shields.io/badge/C-00599C?style=for-the-badge&logo=c&logoColor=white" alt="C">
+          <img src="https://img.shields.io/badge/Arduino-00979D?style=for-the-badge&logo=arduino&logoColor=white" alt="Arduino">
+          <img src="https://img.shields.io/badge/Fusion%20360-FFB300?style=for-the-badge&logo=autodesk&logoColor=white" alt="Fusion3D">
+        </div>
+      </div>
+    </div>
+  </header>
+  <main>
+    <section class="about">
+      <h2>À propos</h2>
+      <p>Je suis étudiant en première année d’Intelligence Artificielle et Big Data, passionné par la programmation, l’électronique et la modélisation 3D. J’aime relever des défis techniques et apprendre de nouvelles technologies pour créer des solutions innovantes.</p>
+    </section>
+    <section class="github-stats">
+      <h2>Statistiques GitHub</h2>
+      <div class="stats-cards">
+        <img src="https://github-readme-stats.vercel.app/api?username=light667&show_icons=true&theme=radical" alt="GitHub Stats" class="stats-img">
+        <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=light667&layout=compact&theme=radical" alt="Top Langs" class="stats-img">
+        <img src="https://github-readme-streak-stats.herokuapp.com/?user=light667&theme=radical" alt="GitHub Streak" class="stats-img">
+      </div>
+    </section>
+    <section class="dev-quote">
+      <h2>Dev Quote</h2>
+      <blockquote>“Talk is cheap. Show me the code.”<br><span>- Linus Torvalds</span></blockquote>
+    </section>
+    <section class="competences">
+      <h2>Compétences</h2>
+      <div class="skills">
+        <span class="skill">HTML</span>
+        <span class="skill">CSS</span>
+        <span class="skill">Python</span>
+        <span class="skill">Flutter</span>
+        <span class="skill">C</span>
+        <span class="skill">Arduino</span>
+        <span class="skill">Fusion3D</span>
+      </div>
+    </section>
+    <section class="projets">
+      <h2>Projets & GitHub</h2>
+      <div class="project-card">
+        <h3>Mon profil GitHub</h3>
+        <p>Découvrez tous mes projets, contributions et codes sources sur mon profil GitHub.</p>
+        <a href="https://github.com/light667" target="_blank" class="github-link"><i class="fab fa-github"></i> github.com/light667</a>
+      </div>
+      <div class="project-card">
+        <h3>Netflix Flutter Clone</h3>
+        <p>Un clone de l’interface Netflix réalisé avec Flutter. <br> <a href="https://github.com/light667/netflix_flutter_clone" target="_blank">Voir le projet</a></p>
+      </div>
+    </section>
+    <!-- Bouton Galerie -->
+    <div class="gallery-btn-container">
+      <button id="open-gallery" class="gallery-btn"><i class="fas fa-images"></i> Galerie</button>
+    </div>
+    <!-- Modal Galerie -->
+    <div id="gallery-modal" class="gallery-modal">
+      <div class="gallery-modal-content">
+        <span id="close-gallery" class="close-gallery">&times;</span>
+        <h2>Galerie</h2>
+        <div class="gallery-container" id="gallery-container">
+          <!-- Images ajoutées dynamiquement par JS -->
+        </div>
+      </div>
+    </div>
+    <section class="days-counter">
+      <h2>Jours avant ma première application publique</h2>
+      <div class="counter-box">
+        <span id="days-until-app">0</span> jours restants avant la sortie de ma première application mobile publique !
+      </div>
+    </section>
+    <section class="contact">
+      <h2>Contact</h2>
+      <div class="contact-methods">
+        <a href="mailto:nethaniahdjossou@gmail.com" class="contact-btn"><i class="fas fa-envelope"></i> Email</a>
+        <a href="https://wa.me/22870703111" target="_blank" class="contact-btn whatsapp"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+        <a href="https://www.linkedin.com/in/kokou-light-djossou-90216233b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" target="_blank" class="contact-btn linkedin"><i class="fab fa-linkedin"></i> LinkedIn</a>
+        <a href="https://facebook.com/LightsNethaniah" target="_blank" class="contact-btn facebook"><i class="fab fa-facebook"></i> Facebook</a>
+        <a href="https://instagram.com/thelight667" target="_blank" class="contact-btn instagram"><i class="fab fa-instagram"></i> Instagram</a>
+        <a href="https://twitter.com/NethaniahD36065" target="_blank" class="contact-btn twitter"><i class="fab fa-twitter"></i> Twitter</a>
+        <a href="https://youtube.com/@Thelight_667" target="_blank" class="contact-btn youtube"><i class="fab fa-youtube"></i> YouTube</a>
+      </div>
+    </section>
+    <section class="faq">
+      <h2>FAQ</h2>
+      <div class="faq-item">
+        <button class="faq-question">Comment puis-je te contacter ?</button>
+        <div class="faq-answer">Tu peux utiliser le formulaire de contact ou m’écrire sur WhatsApp, LinkedIn, ou par email.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">Quels langages maîtrises-tu ?</button>
+        <div class="faq-answer">HTML, CSS, Python, Flutter, C, Arduino, Fusion3D.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">Peux-tu travailler sur des projets freelance ?</button>
+        <div class="faq-answer">Oui, je suis ouvert aux collaborations et projets freelance.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">Où trouver tes projets ?</button>
+        <div class="faq-answer">Sur mon profil GitHub : <a href="https://github.com/light667" target="_blank">github.com/light667</a></div>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <p>&copy; 2024 DJOSSOU Kokou Armand Light. Tous droits réservés. | Visites : <span id="visitor-count">1</span></p>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html> 
