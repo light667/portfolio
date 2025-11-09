@@ -113,13 +113,15 @@ const certificationsData = [
   'certif4.jpg', 'certif5.jpg'
 ];
 
-// Fonction pour charger les certificats
+// Fonction pour charger les certificats avec meilleure gestion d'erreurs
 function loadCertifications() {
   const grid = document.getElementById('certifications-grid');
   if (!grid) return;
 
-  grid.innerHTML = '';
+  grid.innerHTML = '<p class="muted">Chargement des certificats...</p>';
+  
   let loadedCount = 0;
+  const foundImages = [];
 
   certificationsData.forEach((imgSrc, index) => {
     const img = new Image();
@@ -129,38 +131,58 @@ function loadCertifications() {
     img.className = 'certification-img reveal';
     
     img.onload = function() {
-      grid.appendChild(img);
       loadedCount++;
+      foundImages.push(img);
       
-      // Observer pour l'animation
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('in');
-            observer.unobserve(entry.target);
-          }
-        });
-      }, { threshold: 0.1 });
-      
-      observer.observe(img);
+      // Mettre à jour le contenu une fois toutes les images vérifiées
+      if (loadedCount === certificationsData.length) {
+        updateCertificationsGrid(grid, foundImages);
+      }
     };
 
     img.onerror = function() {
-      console.log(`Certificat ${imgSrc} non trouvé`);
+      loadedCount++;
+      console.warn(`Certificat non trouvé: ${imgSrc}`);
+      
+      // Mettre à jour le contenu une fois toutes les images vérifiées
+      if (loadedCount === certificationsData.length) {
+        updateCertificationsGrid(grid, foundImages);
+      }
     };
   });
+}
 
-  // Message si aucun certificat n'est trouvé
-  setTimeout(() => {
-    if (loadedCount === 0) {
-      grid.innerHTML = `
-        <div class="no-certifications" style="grid-column: 1 / -1; text-align: center; padding: 40px;">
-          <p class="muted">Aucun certificat trouvé.</p>
-          <p class="muted">Assurez-vous d'avoir des fichiers nommés <code>certif1.jpg</code>, <code>certif2.jpg</code>, etc. dans le même dossier.</p>
-        </div>
-      `;
-    }
-  }, 2000);
+// Fonction pour mettre à jour la grille des certificats
+function updateCertificationsGrid(grid, foundImages) {
+  grid.innerHTML = '';
+  
+  if (foundImages.length === 0) {
+    grid.innerHTML = `
+      <div class="no-certifications" style="grid-column: 1 / -1; text-align: center; padding: 40px;">
+        <p class="muted">Aucun certificat trouvé.</p>
+        <p class="muted" style="font-size: 0.9rem; margin-top: 10px;">
+          Fichiers recherchés: ${certificationsData.join(', ')}
+        </p>
+      </div>
+    `;
+    return;
+  }
+
+  foundImages.forEach((img, index) => {
+    grid.appendChild(img);
+    
+    // Observer pour l'animation
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('in');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+    
+    observer.observe(img);
+  });
 }
 
 // CORRECTION : Fonction pour charger la galerie
@@ -276,11 +298,12 @@ window.addEventListener('DOMContentLoaded', ()=>{
   typeWriterEffect();
   animateParticles();
   setupFAQ();
-  loadCertifications();
   setupLightbox();
   setupReveal();
   setRandomQuoteOnLoad();
   setupSmoothScroll();
+
+  loadCertifications();
 
   document.getElementById('year').textContent = new Date().getFullYear();
   document.getElementById('cv-link').href = 'https://my.webcv.app/view/2502cf47-aea4-47a6-b9f2-914d171c6f0d';
