@@ -114,42 +114,65 @@ const certificationsData = [
 ];
 
 // Fonction pour charger les certificats avec meilleure gestion d'erreurs
-function loadCertifications() {
+// Fonction améliorée avec vérification des fichiers
+async function loadCertifications() {
   const grid = document.getElementById('certifications-grid');
   if (!grid) return;
 
   grid.innerHTML = '<p class="muted">Chargement des certificats...</p>';
   
-  let loadedCount = 0;
-  const foundImages = [];
+  const existingCertifs = await checkExistingCertifs();
+  
+  if (existingCertifs.length === 0) {
+    grid.innerHTML = `
+      <div class="no-certifications" style="grid-column: 1 / -1; text-align: center; padding: 40px;">
+        <p class="muted">Aucun certificat trouvé.</p>
+        <p class="muted">Assurez-vous que les fichiers sont bien dans le dépôt GitHub.</p>
+      </div>
+    `;
+    return;
+  }
 
-  certificationsData.forEach((imgSrc, index) => {
-    const img = new Image();
+  grid.innerHTML = '';
+  existingCertifs.forEach((imgSrc, index) => {
+    const img = document.createElement('img');
     img.src = imgSrc;
     img.alt = `Certification ${index + 1}`;
     img.loading = 'lazy';
     img.className = 'certification-img reveal';
     
-    img.onload = function() {
-      loadedCount++;
-      foundImages.push(img);
-      
-      // Mettre à jour le contenu une fois toutes les images vérifiées
-      if (loadedCount === certificationsData.length) {
-        updateCertificationsGrid(grid, foundImages);
-      }
-    };
+    grid.appendChild(img);
 
-    img.onerror = function() {
-      loadedCount++;
-      console.warn(`Certificat non trouvé: ${imgSrc}`);
-      
-      // Mettre à jour le contenu une fois toutes les images vérifiées
-      if (loadedCount === certificationsData.length) {
-        updateCertificationsGrid(grid, foundImages);
-      }
-    };
+    // Observer pour l'animation
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('in');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+    
+    observer.observe(img);
   });
+}
+
+// Vérifier quels fichiers existent vraiment
+async function checkExistingCertifs() {
+  const existing = [];
+  
+  for (const certif of certificationsData) {
+    try {
+      const response = await fetch(certif, { method: 'HEAD' });
+      if (response.ok) {
+        existing.push(certif);
+      }
+    } catch (error) {
+      console.warn(`Fichier non trouvé: ${certif}`);
+    }
+  }
+  
+  return existing;
 }
 
 // Fonction pour mettre à jour la grille des certificats
