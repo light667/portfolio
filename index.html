@@ -1,129 +1,242 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portfolio | DJOSSOU Kokou Armand Light</title>
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>DJOSSOU Kokou Armand Light — Portfolio</title>
+
+  <meta name="description" content="Portfolio de DJOSSOU Kokou Armand Light — Étudiant en IA & Big Data. Projets, compétences, certifications, et contact." />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="photo.jpg" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="DJOSSOU Kokou Armand Light — Portfolio" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="photo.jpg" />
+  <meta property="og:description" content="Étudiant en IA & Big Data — Projets, compétences, certifications, contact." />
 </head>
 <body>
-  <canvas id="bg-particles"></canvas>
-  <header class="main-header">
-    <div class="header-content">
-      <img src="photo.jpg" alt="DJOSSOU Kokou Armand Light" class="profile-photo">
-      <div class="header-text">
-        <h1>DJOSSOU Kokou Armand Light</h1>
-        <h2>Étudiant en Intelligence Artificielle & Big Data</h2>
-        <p class="accroche">Passionné par l'innovation, la technologie et la résolution de problèmes complexes.</p>
-        <div class="header-links">
-          <a href="https://github.com/light667" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
-          <a href="https://www.linkedin.com/in/kokou-light-djossou-90216233b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
-          <a href="https://wa.me/22870703111" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-          <a href="mailto:nethaniahdjossou@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
-          <a href="https://instagram.com/thelight667" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
-        </div>
-        <div class="badges">
-          <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white" alt="HTML5">
-          <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white" alt="CSS3">
-          <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python">
-          <img src="https://img.shields.io/badge/Flutter-02569B?style=for-the-badge&logo=flutter&logoColor=white" alt="Flutter">
-          <img src="https://img.shields.io/badge/C-00599C?style=for-the-badge&logo=c&logoColor=white" alt="C">
-          <img src="https://img.shields.io/badge/Arduino-00979D?style=for-the-badge&logo=arduino&logoColor=white" alt="Arduino">
-          <img src="https://img.shields.io/badge/Fusion%20360-FFB300?style=for-the-badge&logo=autodesk&logoColor=white" alt="Fusion3D">
-        </div>
-      </div>
-    </div>
+  <canvas id="bg-particles" aria-hidden="true"></canvas>
+
+  <!-- Header / Nav -->
+  <header class="site-header">
+    <a class="brand" href="#hero" aria-label="Retour à l'accueil">
+      <span class="brand-logo">L.</span>
+      <span class="brand-name">Light</span>
+    </a>
+    <nav class="site-nav" aria-label="Navigation principale">
+      <a href="#about">À propos</a>
+      <a href="#skills">Compétences</a>
+      <a href="#projects">Projets</a>
+      <a href="#certifications">Certifications</a>
+      <a href="#cv">CV</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <button id="theme-toggle" class="icon-btn" title="Basculer le thème" aria-label="Basculer le thème">
+      <i class="fa-solid fa-circle-half-stroke"></i>
+    </button>
   </header>
-  <main>
-    <section class="about">
-      <h2>À propos</h2>
-      <p>Je suis étudiant en première année d’Intelligence Artificielle et Big Data, passionné par la programmation, l’électronique et la modélisation 3D. J’aime relever des défis techniques et apprendre de nouvelles technologies pour créer des solutions innovantes.</p>
-    </section>
-    <section class="github-stats">
-      <h2>Statistiques GitHub</h2>
-      <div class="stats-cards">
-        <img src="https://github-readme-stats.vercel.app/api?username=light667&show_icons=true&theme=radical" alt="GitHub Stats" class="stats-img">
-        <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=light667&layout=compact&theme=radical" alt="Top Langs" class="stats-img">
-        <img src="https://github-readme-streak-stats.herokuapp.com/?user=light667&theme=radical" alt="GitHub Streak" class="stats-img">
-      </div>
-    </section>
-    <section class="dev-quote">
-      <h2>Dev Quote</h2>
-      <blockquote>“Talk is cheap. Show me the code.”<br><span>- Linus Torvalds</span></blockquote>
-    </section>
-    <section class="competences">
-      <h2>Compétences</h2>
-      <div class="skills">
-        <span class="skill">HTML</span>
-        <span class="skill">CSS</span>
-        <span class="skill">Python</span>
-        <span class="skill">Flutter</span>
-        <span class="skill">C</span>
-        <span class="skill">Arduino</span>
-        <span class="skill">Fusion3D</span>
-      </div>
-    </section>
-    <section class="projets">
-      <h2>Projets & GitHub</h2>
-      <div class="project-card">
-        <h3>Mon profil GitHub</h3>
-        <p>Découvrez tous mes projets, contributions et codes sources sur mon profil GitHub.</p>
-        <a href="https://github.com/light667" target="_blank" class="github-link"><i class="fab fa-github"></i> github.com/light667</a>
-      </div>
-      <div class="project-card">
-        <h3>Netflix Flutter Clone</h3>
-        <p>Un clone de l’interface Netflix réalisé avec Flutter. <br> <a href="https://github.com/light667/netflix_flutter_clone" target="_blank">Voir le projet</a></p>
-        <h3>PolyAssistant</h3>
-        <p>Une application mobile muni d'un chat bot et d'autres ressources pour aider les étudiant en Cycle Ingénieurie, <br> <a href="https://github.com/light667/PolyAssistant-Android" target="_blank">Voir le projet</a></p>
-      </div>
-    </section>
-    <!-- Bouton Galerie -->
-    <div class="gallery-btn-container">
-      <button id="open-gallery" class="gallery-btn"><i class="fas fa-images"></i> Galerie</button>
-    </div>
-    <!-- Modal Galerie -->
-    <div id="gallery-modal" class="gallery-modal">
-      <div class="gallery-modal-content">
-        <span id="close-gallery" class="close-gallery">&times;</span>
-        <h2>Galerie</h2>
-        <div class="gallery-container" id="gallery-container">
-          <!-- Images ajoutées dynamiquement par JS -->
+
+  <!-- HERO -->
+  <section id="hero" class="hero section">
+    <div class="hero-grid">
+      <div class="hero-text">
+        <div class="hero-kicker">Étudiant en IA & Big Data</div>
+        <h1 class="hero-title">
+          DJOSSOU<br/>Kokou Armand <span class="accent">Light</span>
+        </h1>
+        <p class="hero-sub accroche">
+          Je conçois des solutions utiles en IA, Mobile & Web — avec exigence, curiosité et simplicité.
+        </p>
+        <div class="hero-cta">
+          <a class="btn primary" href="#projects"><i class="fa-solid fa-rocket"></i> Voir mes projets</a>
+          <a class="btn ghost" href="#contact"><i class="fa-solid fa-paper-plane"></i> Me contacter</a>
         </div>
+
+        <div class="socials">
+          <a href="https://github.com/light667" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+          <a href="https://www.linkedin.com/in/kokou-light-djossou-90216233b" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+          <a href="https://wa.me/22870703111" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+          <a href="mailto:nethaniahdjossou@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+          <a href="https://instagram.com/thelight667" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        </div>
+
+        <div class="badges">
+          <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python" />
+          <img src="https://img.shields.io/badge/NumPy-013243?style=for-the-badge&logo=numpy&logoColor=white" alt="NumPy" />
+          <img src="https://img.shields.io/badge/Pandas-150458?style=for-the-badge&logo=pandas&logoColor=white" alt="Pandas" />
+          <img src="https://img.shields.io/badge/Matplotlib-11557c?style=for-the-badge&logo=python&logoColor=white" alt="Matplotlib" />
+          <img src="https://img.shields.io/badge/C-00599C?style=for-the-badge&logo=c&logoColor=white" alt="C" />
+          <img src="https://img.shields.io/badge/Flutter-02569B?style=for-the-badge&logo=flutter&logoColor=white" alt="Flutter" />
+          <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white" alt="HTML5" />
+          <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white" alt="CSS3" />
+          <img src="https://img.shields.io/badge/Arduino-00979D?style=for-the-badge&logo=arduino&logoColor=white" alt="Arduino" />
+          <img src="https://img.shields.io/badge/Fusion%20360-FFB300?style=for-the-badge&logo=autodesk&logoColor=white" alt="Fusion 360" />
+      </div>
+      </div>
+
+      <figure class="hero-photo">
+        <img src="photo.jpg" alt="Portrait de DJOSSOU Kokou Armand Light" />
+        <figcaption class="dev-quote">
+          <blockquote>“Talk is cheap. Show me the code.”<br><span>— Linus Torvalds</span></blockquote>
+        </figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- À PROPOS -->
+  <section id="about" class="section">
+    <h2 class="section-title">À propos</h2>
+    <p class="lead">
+      Étudiant en deuxième année d’Intelligence Artificielle & Big Data. Passionné par la programmation,
+      l’électronique et la modélisation 3D, je construis des projets concrets qui créent de la valeur,
+      en gardant un esprit simple, efficace et orienté utilisateur.
+    </p>
+
+    <div class="stats-cards">
+      <img src="https://github-readme-stats.vercel.app/api?username=light667&show_icons=true&theme=radical" alt="Statistiques GitHub" class="stats-img" loading="lazy">
+      <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=light667&layout=compact&theme=radical" alt="Langages les plus utilisés" class="stats-img" loading="lazy">
+      <img src="https://github-readme-streak-stats.herokuapp.com/?user=light667&theme=radical" alt="GitHub Streak" class="stats-img" loading="lazy">
+    </div>
+  </section>
+
+  <!-- COMPÉTENCES -->
+  <section id="skills" class="section">
+    <h2 class="section-title">Compétences</h2>
+    <ul class="chips">
+      <li>Python</li>
+      <li>C</li>
+      <li>Flutter</li>
+      <li>HTML</li>
+      <li>CSS</li>
+      <li>Arduino</li>
+      <li>Fusion 360</li>
+      <li>Manipulation de données avec NumPy</li>
+      <li>Analyse et traitement de données avec Pandas</li>
+      <li>Visualisation de données avec Matplotlib</li>
+    </ul>
+  </section>
+
+  <!-- PROJETS -->
+  <section id="projects" class="section">
+    <h2 class="section-title">Projets</h2>
+
+    <div class="cards">
+      <article class="card">
+        <div class="card-head">
+          <h3>Profil GitHub</h3>
+          <a class="btn link" target="_blank" href="https://github.com/light667"><i class="fa-brands fa-github"></i> github.com/light667</a>
+        </div>
+        <p>Découvrez mes contributions, essais, et projets publics.</p>
+      </article>
+
+      <article class="card">
+        <h3>Analyse des données du Titanic</h3>
+        <p>Manipulation, Analyse ,  Visualisation et Interpretation des données du Titanic avec Pandas , NumPy et Matplotlib</p>
+        <a class="btn primary" target="_blank" href="https://github.com/light667/ml-python-foundations/blob/main/Pandas/Analyse_Titanic.ipynb">Voir le projet</a>
+      </article>
+
+      <article class="card">
+        <h3>PolyAssistant</h3>
+        <p>Application mobile avec chatbot et ressources pour étudiants.</p>
+        <a class="btn primary" target="_blank" href="https://polyassistant-d250a.web.app/">Voir le projet</a>
+      </article>
+
+      <article class="card">
+        <h3>Netflix Flutter Clone</h3>
+        <p>Clone soigné de l’interface Netflix réalisé avec Flutter.</p>
+        <a class="btn primary" target="_blank" href="https://github.com/light667/netflix_flutter_clone">Voir le projet</a>
+      </article>
+
+       <article class="card">
+        <h3>CleanOvators</h3>
+        <p>Site Web pour une entreprise de Tri et de Gestion des Ordures</p>
+        <a class="btn primary" target="_blank" href="https://light667.github.io/cleanOvators/">Voir le projet</a>
+      </article>
+    </div>
+  </section>
+
+  <!-- CERTIFICATIONS -->
+  <section id="certifications" class="section">
+    <h2 class="section-title">Mes Certifications & Attestations</h2>
+    <div id="certifications-grid" class="certifications-grid"></div>
+  </section>
+
+  <!-- CV -->
+  <section id="cv" class="section">
+    <h2 class="section-title">Mon CV</h2>
+    <p class="lead">Consulte mon CV en ligne.</p>
+    <a class="btn xl primary" target="_blank" rel="noopener" href="https://my.webcv.app/view/2502cf47-aea4-47a6-b9f2-914d171c6f0d" id="cv-link">
+      <i class="fa-regular fa-file-lines"></i> Voir mon CV
+    </a>
+  </section>
+
+  <!-- GALERIE -->
+<section class="section">
+  <div class="gallery-btn-container">
+    <button id="open-gallery" class="gallery-btn"><i class="fas fa-images"></i> Ouvrir la Galerie</button>
+  </div>
+</section>
+
+<!-- Modal Galerie -->
+<div id="gallery-modal" class="gallery-modal">
+  <div class="gallery-modal-content">
+    <span id="close-gallery" class="close-gallery">&times;</span>
+    <h2>Galerie Photos</h2>
+    <div class="gallery-container" id="gallery-container">
+      <!-- Images ajoutées dynamiquement par JS -->
+    </div>
+  </div>
+</div>
+
+  <!-- FAQ -->
+  <section id="faq" class="section">
+    <h2 class="section-title">FAQ</h2>
+    <div class="faq">
+      <div class="faq-item">
+        <button class="faq-question">Comment me contacter ?</button>
+        <div class="faq-answer">Par email, WhatsApp ou LinkedIn (voir plus bas).</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">Langages & outils</button>
+        <div class="faq-answer">Python,Numpy, Matplotlib, Pandas, Scipy, Flutter, C, HTML, CSS, Arduino, Fusion 360.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">Disponible en freelance ?</button>
+        <div class="faq-answer">Oui, ouvert aux collaborations et missions.</div>
       </div>
     </div>
-    <section class="contact">
-      <h2>Contact</h2>
-      <div class="contact-methods">
-        <a href="mailto:nethaniahdjossou@gmail.com" class="contact-btn"><i class="fas fa-envelope"></i> Email</a>
-        <a href="https://wa.me/22870703111" target="_blank" class="contact-btn whatsapp"><i class="fab fa-whatsapp"></i> WhatsApp</a>
-        <a href="https://www.linkedin.com/in/kokou-light-djossou-90216233b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" target="_blank" class="contact-btn linkedin"><i class="fab fa-linkedin"></i> LinkedIn</a>
-        <a href="https://instagram.com/thelight667" target="_blank" class="contact-btn instagram"><i class="fab fa-instagram"></i> Instagram</a> 
-      </div>
-    </section>
-    <section class="faq">
-      <h2>FAQ</h2>
-      <div class="faq-item">
-        <button class="faq-question">Comment puis-je te contacter ?</button>
-        <div class="faq-answer">Tu peux utiliser le formulaire de contact ou m’écrire sur WhatsApp, LinkedIn, ou par email.</div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-question">Quels langages maîtrises-tu ?</button>
-        <div class="faq-answer">HTML, CSS, Python, Flutter, C, Arduino, Fusion3D.</div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-question">Peux-tu travailler sur des projets freelance ?</button>
-        <div class="faq-answer">Oui, je suis ouvert aux collaborations et projets freelance.</div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-question">Où trouver tes projets ?</button>
-        <div class="faq-answer">Sur mon profil GitHub : <a href="https://github.com/light667" target="_blank">github.com/light667</a></div>
-      </div>
-    </section>
-  </main>
-  <footer>
-    <p>&copy; 2024 DJOSSOU Kokou Armand Light. Tous droits réservés. | Visites : <span id="visitor-count">1</span></p>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="section">
+    <h2 class="section-title">Contact</h2>
+    <div class="socials">
+          <a href="https://github.com/light667" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+          <a href="https://www.linkedin.com/in/kokou-light-djossou-90216233b" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+          <a href="https://wa.me/22870703111" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+          <a href="mailto:nethaniahdjossou@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+          <a href="https://instagram.com/thelight667" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        </div>
+  </section>
+
+  <!-- LIGHTBOX -->
+  <div id="lightbox" class="lightbox" aria-hidden="true">
+    <button class="lightbox-close" aria-label="Fermer (Esc)"><i class="fa-solid fa-xmark"></i></button>
+    <button class="lightbox-nav prev" aria-label="Précédent (←)"><i class="fa-solid fa-chevron-left"></i></button>
+    <img class="lightbox-img" alt="Aperçu" />
+    <button class="lightbox-nav next" aria-label="Suivant (→)"><i class="fa-solid fa-chevron-right"></i></button>
+  </div>
+
+  <footer class="site-footer">
+    <p>&copy; <span id="year"></span> DJOSSOU Kokou Armand Light — Tous droits réservés.
+      <span class="sep">•</span> Visites : <span id="visitor-count">1</span>
+    </p>
   </footer>
-  <script src="script.js"></script>
+
+  <script src="script.js" defer></script>
 </body>
-</html> 
+</html>
