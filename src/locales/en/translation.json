@@ -1,0 +1,72 @@
+{
+  "nav": {
+    "about": "About",
+    "skills": "Skills",
+    "services": "Services",
+    "projects": "Projects",
+    "contact": "Contact"
+  },
+  "hero": {
+    "greeting": "Hi, I'm",
+    "cta": "Contact me",
+    "title1": "Junior AI Engineer",
+    "title2": "Junior Flutter Developer",
+    "tagline": "Determination. Innovation. Impact. I transform complex ideas into elite technological solutions."
+  },
+  "about": {
+    "title": "About",
+    "description": "Passionate about Artificial Intelligence and Mobile development, I am committed to delivering robust and scalable solutions. My approach is driven by scientific rigor and a constant desire to push the boundaries of technology to solve real-world problems."
+  },
+  "journey": {
+    "title": "My Journey",
+    "step1": {
+      "date": "2023 - Present",
+      "title": "Freelance AI Engineer",
+      "desc": "Designing intelligent agents and RAG pipelines for various sectors."
+    },
+    "step2": {
+      "date": "2022 - 2023",
+      "title": "Flutter Mobile Development",
+      "desc": "Creating premium interfaces and integrating cloud services (Firebase/Supabase)."
+    }
+  },
+  "certifications": {
+    "title": "Certified Expertise"
+  },
+
+  "skills": {
+    "title": "Technical Expertise"
+  },
+  "services": {
+    "title": "My Services",
+    "s1": {
+      "title": "AI Agents & LLM Chatbots Development",
+      "desc": "Design of custom intelligent assistants using Langchain and Chainlit."
+    },
+    "s2": {
+      "title": "RAG Solutions & Vector Databases",
+      "desc": "Implementation of Retrieval-Augmented Generation systems to leverage your private data."
+    },
+    "s3": {
+      "title": "Mobile App Development",
+      "desc": "High-performance cross-platform applications with Flutter and Dart."
+    },
+    "s4": {
+      "title": "Firebase & Supabase Integration",
+      "desc": "Scalable backend architecture and real-time data management."
+    }
+  },
+  "projects": {
+    "title": "Recent Projects",
+    "view_live": "View Project",
+    "view_code": "Source Code",
+    "under_construction": "Other projects are currently under construction..."
+  },
+  "contact": {
+    "title": "Get in Touch",
+    "name": "Name",
+    "email": "Email",
+    "message": "Message",
+    "send": "Send Message"
+  }
+}

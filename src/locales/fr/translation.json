@@ -1,0 +1,72 @@
+{
+  "nav": {
+    "about": "À Propos",
+    "skills": "Compétences",
+    "services": "Services",
+    "projects": "Projets",
+    "contact": "Contact"
+  },
+  "hero": {
+    "greeting": "Salut, je suis",
+    "cta": "Me contacter",
+    "title1": "Ingénieur IA Junior",
+    "title2": "Développeur Flutter Junior",
+    "tagline": "Détermination. Innovation. Impact. Je transforme des idées complexes en solutions technologiques d'élite."
+  },
+  "about": {
+    "title": "À Propos",
+    "description": "Passionné par l'Intelligence Artificielle et le développement Mobile, je m'engage à fournir des solutions robustes et scalables. Mon approche est guidée par la rigueur scientifique et une volonté constante de repousser les limites de la technologie pour résoudre des problèmes concrets."
+  },
+  "journey": {
+    "title": "Mon Parcours",
+    "step1": {
+      "date": "2023 - Présent",
+      "title": "Ingénieur IA Freelance",
+      "desc": "Conception d'agents intelligents et de pipelines RAG pour divers secteurs."
+    },
+    "step2": {
+      "date": "2022 - 2023",
+      "title": "Développement Mobile Flutter",
+      "desc": "Création d'interfaces premium et intégration de services cloud (Firebase/Supabase)."
+    }
+  },
+  "certifications": {
+    "title": "Expertise Certifiée"
+  },
+
+  "skills": {
+    "title": "Expertise Technique"
+  },
+  "services": {
+    "title": "Mes Services",
+    "s1": {
+      "title": "Développement d'Agents IA & Chatbots LLM",
+      "desc": "Conception d'assistants intelligents personnalisés utilisant Langchain et Chainlit."
+    },
+    "s2": {
+      "title": "Solutions RAG & Bases de Données Vectorielles",
+      "desc": "Implémentation de systèmes de récupération augmentée pour exploiter vos données privées."
+    },
+    "s3": {
+      "title": "Développement Applications Mobiles",
+      "desc": "Applications cross-platform haute performance avec Flutter et Dart."
+    },
+    "s4": {
+      "title": "Intégration Firebase & Supabase",
+      "desc": "Architecture backend scalable et gestion de données en temps réel."
+    }
+  },
+  "projects": {
+    "title": "Projets Récents",
+    "view_live": "Voir le projet",
+    "view_code": "Code source",
+    "under_construction": "D'autres projets sont en cours de construction..."
+  },
+  "contact": {
+    "title": "Contactez-moi",
+    "name": "Nom",
+    "email": "Email",
+    "message": "Message",
+    "send": "Envoyer le message"
+  }
+}
