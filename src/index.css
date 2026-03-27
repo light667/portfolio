@@ -13,7 +13,7 @@
 
 @layer components {
   .neon-border {
-    @apply border border-white/10 hover:border-neon-cyan/50 transition-colors duration-300;
+    @apply border border-white/10 hover:border-neon-cyan/30 transition-colors duration-300;
   }
   
   .glass-card {

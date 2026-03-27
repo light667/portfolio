@@ -7,14 +7,12 @@ const Footer = () => {
     <footer className="py-12 border-t border-white/5 bg-dark">
       <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-8">
         <div className="text-center md:text-left">
-          <p className="text-2xl font-black bg-gradient-to-r from-neon-cyan to-neon-purple bg-clip-text text-transparent italic mb-2">
-            KALD.
-          </p>
           <p className="text-slate-500 text-sm">
             © 2024 Kokou Armand Light DJOSSOU. <br />
-            Built with React, Tailwind & Framer Motion.
+            Tous droits réservés.
           </p>
         </div>
+
 
         <div className="flex gap-6">
           {[

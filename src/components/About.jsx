@@ -48,22 +48,24 @@ const About = () => {
           </div>
 
           <div className="relative">
-             <div className="aspect-video glass-card border-neon-cyan/20 overflow-hidden flex items-center justify-center">
-                <div className="text-center">
-                  <motion.div 
-                    animate={{ scale: [1, 1.1, 1] }} 
-                    transition={{ duration: 2, repeat: Infinity }}
-                    className="w-16 h-16 bg-neon-cyan/20 rounded-full flex items-center justify-center mx-auto mb-4"
-                  >
-                    <div className="w-8 h-8 bg-neon-cyan rounded-full shadow-[0_0_20px_#06b6d4]" />
-                  </motion.div>
-                  <p className="font-mono text-neon-cyan animate-pulse">SYSTEM_ONLINE</p>
-                </div>
+             <div className="aspect-video glass-card border-white/5 overflow-hidden flex items-center justify-center p-0">
+                <div className="w-full h-full bg-grid-pattern opacity-10 absolute inset-0" />
+                <motion.div 
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  className="z-10 text-center"
+                >
+                   <div className="w-20 h-20 bg-neon-cyan/10 rounded-2xl flex items-center justify-center mx-auto mb-4 border border-neon-cyan/20">
+                      <Cpu size={40} className="text-neon-cyan" />
+                   </div>
+                   <h4 className="text-white font-bold tracking-widest uppercase text-xs">Innovation Focused</h4>
+                </motion.div>
              </div>
              {/* Decorative lines */}
-             <div className="absolute -top-4 -right-4 w-24 h-24 border-t-2 border-r-2 border-neon-cyan/30 rounded-tr-3xl" />
-             <div className="absolute -bottom-4 -left-4 w-24 h-24 border-b-2 border-l-2 border-neon-purple/30 rounded-bl-3xl" />
+             <div className="absolute -top-4 -right-4 w-24 h-24 border-t border-r border-white/10 rounded-tr-3xl" />
+             <div className="absolute -bottom-4 -left-4 w-24 h-24 border-b border-l border-white/10 rounded-bl-3xl" />
           </div>
+
         </motion.div>
       </div>
     </section>

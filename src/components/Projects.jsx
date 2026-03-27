@@ -21,8 +21,10 @@ const Projects = () => {
       link: "https://pulseai-a0548.web.app/",
       stack: ["FastAPI", "Mistral", "Supabase", "Flutter", "Firebase", "Machine Learning"],
       description: "Plateforme de diagnostic médical et d'orientation hospitalière par IA en Afrique.",
-      image: "https://images.unsplash.com/photo-1576091160550-217359f49fde?auto=format&fit=crop&q=80&w=800"
+      image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&q=80&w=800"
     },
+
+
     {
       title: "FOOD ORDERBOT",
       type: "AI OrderBot",
@@ -97,21 +99,7 @@ const Projects = () => {
             </motion.div>
           ))}
           
-          {/* Professional Call-to-action */}
-          <motion.div
-             initial={{ opacity: 0 }}
-             whileInView={{ opacity: 1 }}
-             viewport={{ once: true }}
-             className="flex flex-col items-center justify-center glass-card border-dashed border-white/10 text-center p-6 bg-transparent"
-          >
-             <div className="p-3 bg-neon-cyan/10 rounded-full mb-4">
-                <Code size={24} className="text-neon-cyan" />
-             </div>
-             <p className="text-slate-500 text-sm font-light italic mb-2">
-                {t('projects.under_construction')}
-             </p>
-             <span className="text-[10px] text-neon-cyan/50 font-bold uppercase tracking-widest">SYSTEM_UPDATING...</span>
-          </motion.div>
+
         </div>
       </div>
     </section>

@@ -17,23 +17,6 @@
     "title": "À Propos",
     "description": "Passionné par l'Intelligence Artificielle et le développement Mobile, je m'engage à fournir des solutions robustes et scalables. Mon approche est guidée par la rigueur scientifique et une volonté constante de repousser les limites de la technologie pour résoudre des problèmes concrets."
   },
-  "journey": {
-    "title": "Mon Parcours",
-    "step1": {
-      "date": "2023 - Présent",
-      "title": "Ingénieur IA Freelance",
-      "desc": "Conception d'agents intelligents et de pipelines RAG pour divers secteurs."
-    },
-    "step2": {
-      "date": "2022 - 2023",
-      "title": "Développement Mobile Flutter",
-      "desc": "Création d'interfaces premium et intégration de services cloud (Firebase/Supabase)."
-    }
-  },
-  "certifications": {
-    "title": "Expertise Certifiée"
-  },
-
   "skills": {
     "title": "Expertise Technique"
   },
