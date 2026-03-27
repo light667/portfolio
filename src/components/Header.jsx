@@ -24,12 +24,12 @@ const Header = () => {
   const navLinks = [
     { name: t('nav.about'), href: '#about' },
     { name: t('nav.skills'), href: '#skills' },
-    { name: t('journey.title'), href: '#journey' },
-    { name: t('certifications.title'), href: '#certifications' },
     { name: t('nav.services'), href: '#services' },
     { name: t('nav.projects'), href: '#projects' },
     { name: t('nav.contact'), href: '#contact' },
   ];
+
+
 
 
   return (

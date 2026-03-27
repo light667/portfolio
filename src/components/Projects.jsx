@@ -12,22 +12,22 @@ const Projects = () => {
       type: "Mobile App & AI",
       link: "https://miabe-assistant.web.app/",
       stack: ["Flutter", "Firebase", "LLM", "Dart"],
-      description: "Assistant mobile intelligent facilitant l'accès aux services au Togo.",
+      description: "Assistant Mobile pour les Etudiants en Science et Technologie.",
       image: "https://images.unsplash.com/photo-1512428559087-560fa5ceab42?auto=format&fit=crop&q=80&w=800"
     },
     {
       title: "PulseAI",
-      type: "Medical Platform",
+      type: "Mobile App & AI",
       link: "https://pulseai-a0548.web.app/",
-      stack: ["FastAPI", "Mistral", "Supabase", "Flutter"],
+      stack: ["FastAPI", "Mistral", "Supabase", "Flutter", "Firebase", "Machine Learning"],
       description: "Plateforme de diagnostic médical et d'orientation hospitalière par IA en Afrique.",
       image: "https://images.unsplash.com/photo-1576091160550-217359f49fde?auto=format&fit=crop&q=80&w=800"
     },
     {
       title: "FOOD ORDERBOT",
-      type: "AI Bot",
+      type: "AI OrderBot",
       link: "https://github.com/light667/LIGHTFOOD-ORDERBOT",
-      stack: ["Python", "Langchain", "OpenAI", "Chainlit"],
+      stack: ["Python", "Langchain", "Gemini", "Chainlit"],
       description: "Chatbot IA pour la commande automatisée de nourriture en ligne.",
       image: "https://images.unsplash.com/photo-1526367790999-0150786686a2?auto=format&fit=crop&q=80&w=800"
     },

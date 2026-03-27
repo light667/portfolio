@@ -1,31 +1,31 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
-import { Code2, BrainCircuit, Smartphone, Server } from 'lucide-react';
+import { BrainCircuit, MonitorSmartphone, Sparkles, GitBranch } from 'lucide-react';
 
 const Skills = () => {
   const { t } = useTranslation();
 
   const skillGroups = [
     {
-      title: "AI & Data Science",
+      title: "AI, ML & Data Science",
       icon: <BrainCircuit className="text-neon-cyan" />,
-      skills: ["Python", "Numpy", "ScikitLearn", "Pandas"]
+      skills: ["Python", "Numpy", "ScikitLearn", "Pandas", "Seaborn", "PyTorch"]
     },
     {
       title: "Generative AI & Vector DBs",
-      icon: <Code2 className="text-neon-purple" />,
-      skills: ["Langchain", "Chainlit", "HuggingFace", "ChromaDB", "Pinecone", "Weaviate"]
+      icon: <Sparkles className="text-neon-purple" />,
+      skills: ["Langchain", "LlamaIndex", "Chainlit", "HuggingFace", "ChromaDB", "Pinecone", "Weaviate", "Prompt Engineering", "RAG", "Fine Tuning", "AI Agent"]
     },
     {
-      title: "Mobile Development",
-      icon: <Smartphone className="text-neon-lime" />,
-      skills: ["Flutter", "Dart"]
+      title: "Mobile & Web Development",
+      icon: <MonitorSmartphone className="text-neon-lime" />,
+      skills: ["Flutter", "Dart", "FastAPI", "Streamlit", "HTML", "CSS", "Firebase", "Supabase"]
     },
     {
-      title: "Backend & BaaS",
-      icon: <Server className="text-blue-400" />,
-      skills: ["Firebase", "Supabase"]
+      title: "Tools & Version Control",
+      icon: <GitBranch className="text-blue-500" />,
+      skills: ["Git", "GitHub", "GitLab", "VS Code", "Postman"]
     }
   ];
 
@@ -37,7 +37,7 @@ const Skills = () => {
           {t('skills.title')}
         </h2>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
           {skillGroups.map((group, i) => (
             <motion.div
               key={group.title}
@@ -46,20 +46,20 @@ const Skills = () => {
               viewport={{ once: true }}
               transition={{ delay: i * 0.1 }}
               whileHover={{ y: -5 }}
-              className="glass-card neon-border group"
+              className="glass-card neon-border group relative flex flex-col h-full"
             >
               <div className="flex items-center gap-3 mb-6">
-                <div className="p-2 bg-white/5 rounded-lg">
+                <div className="p-2 bg-white/5 rounded-lg group-hover:bg-white/10 transition-colors">
                   {group.icon}
                 </div>
-                <h3 className="font-bold text-white text-sm uppercase tracking-wider">{group.title}</h3>
+                <h3 className="font-bold text-white text-[10px] uppercase tracking-wider">{group.title}</h3>
               </div>
               
-              <div className="flex flex-wrap gap-2">
+              <div className="flex flex-wrap gap-2 mt-auto">
                 {group.skills.map((skill) => (
                   <span 
                     key={skill}
-                    className="px-3 py-1 bg-white/5 border border-white/10 rounded-full text-xs text-slate-400 hover:border-neon-cyan hover:text-white transition-all cursor-default"
+                    className="px-2 py-1 bg-white/5 border border-white/10 rounded-full text-[10px] text-slate-400 hover:border-neon-cyan hover:text-white transition-all cursor-default"
                   >
                     {skill}
                   </span>

@@ -1,7 +1,7 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
-import { Mail, Phone, MessageSquare, Send, ArrowRight } from 'lucide-react';
+import { Mail, MessageSquare, Send, ArrowRight } from 'lucide-react';
 
 const Contact = () => {
   const { t } = useTranslation();
@@ -20,8 +20,9 @@ const Contact = () => {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
           >
-            <p className="text-xl text-slate-400 mb-12">
-              Prêt à propulser votre prochain projet avec une IA sur-mesure ou une application mobile d'excellence ?
+            <p className="text-xl text-slate-400 mb-12 font-light leading-relaxed">
+              Prêt à propulser votre prochain projet avec une IA sur-mesure ou une application mobile d'excellence ? <br />
+              <span className="text-white font-bold block mt-4 uppercase tracking-tighter italic">Détermination. Innovation. Impact.</span>
             </p>
 
             <div className="space-y-6">
