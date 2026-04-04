@@ -65,7 +65,7 @@ const Hero = () => {
             <span className="text-[10px] font-bold text-neon-lime uppercase">ML Engineer</span>
           </motion.div>
           <motion.div animate={{ x: [0, -5, 0] }} transition={{ duration: 4.5, repeat: Infinity }} className="absolute top-1/2 -right-16 sm:-right-20 glass-card px-4 py-2 border-blue-500/30 z-20 hidden lg:block">
-            <span className="text-[10px] font-bold text-blue-500 uppercase">Web Dev</span>
+            <span className="text-[10px] font-bold text-blue-500 uppercase">Data Science</span>
           </motion.div>
         </motion.div>
       </div>
