@@ -1,0 +1,99 @@
+{
+  "nav": {
+    "about": "About",
+    "experience": "Experience",
+    "skills": "Skills",
+    "services": "Services",
+    "projects": "Projects",
+    "contact": "Contact"
+  },
+  "hero": {
+    "greeting": "Hi, I'm",
+    "cta": "Contact me",
+    "download_cv": "Download CV",
+    "title1": "Junior AI Engineer",
+    "title2": "Junior Flutter Developer",
+    "tagline": "Determination. Innovation. Impact. I transform complex ideas into elite technological solutions."
+  },
+  "about": {
+    "title": "About",
+    "description": "Passionate about Artificial Intelligence and Mobile development, I am committed to delivering robust and scalable solutions. My approach is driven by scientific rigor and a constant desire to push the boundaries of technology to solve real-world problems."
+  },
+  "experience": {
+    "title": "Experience",
+    "exp1": {
+      "role": "AI Intern",
+      "date": "February 2026 — Present",
+      "desc": "Intensive Generative AI training from A to Z: mastering LLM architectures, designing RAG pipelines, advanced prompt engineering and AI agent development. Hands-on experience on real-world projects integrating Langchain, ChromaDB and cutting-edge models."
+    },
+    "exp2": {
+      "role": "Web Developer & Solutions",
+      "date": "February 2026 — Present",
+      "desc": "Voluntary contribution within the Web Dev & Solutions team: designing and developing professional websites, integrating digital solutions and actively participating in collaborative projects focused on social impact."
+    }
+  },
+  "skills": {
+    "title": "Technical Expertise"
+  },
+  "services": {
+    "title": "My Services",
+    "subtitle": "Custom technological solutions to propel your business forward",
+    "s1": {
+      "title": "AI Chatbots & Intelligent Agents",
+      "desc": "Automate your customer relations with custom AI assistants. Design of intelligent conversational agents using Langchain, Chainlit and the latest LLM models."
+    },
+    "s2": {
+      "title": "RAG Solutions & Vector Databases",
+      "desc": "Harness the power of your private data with AI. Implementation of retrieval-augmented generation systems with ChromaDB, Pinecone and Weaviate."
+    },
+    "s3": {
+      "title": "Mobile Applications",
+      "desc": "High-performance cross-platform apps with Flutter & Dart. Elegant interfaces and premium user experiences on iOS and Android."
+    },
+    "s4": {
+      "title": "Websites & Business Pages",
+      "desc": "Modern, responsive professional websites for businesses. Premium design, SEO optimized and guaranteed performance for your online presence."
+    },
+    "s5": {
+      "title": "Cloud Backend Integration",
+      "desc": "Scalable backend architecture with Firebase and Supabase. Authentication, real-time database, storage and high-performance cloud deployment."
+    },
+    "s6": {
+      "title": "AI Consulting & Strategy",
+      "desc": "Technical audit and strategic consulting to integrate AI into your business. Identifying automation opportunities and custom implementation plan."
+    }
+  },
+  "projects": {
+    "title": "Recent Projects",
+    "view_live": "View Project",
+    "view_code": "Source Code",
+    "under_construction": "Other projects are currently under construction..."
+  },
+  "contact": {
+    "title": "Get in Touch",
+    "name": "Full name",
+    "email": "Email address",
+    "type": "Request type",
+    "type_collab": "Project collaboration",
+    "type_service": "Service request",
+    "type_other": "Other",
+    "message": "Your message",
+    "send": "Send Message",
+    "sending": "Sending...",
+    "success": "Message sent successfully! I'll get back to you soon.",
+    "error": "An error occurred. Please try again or contact me by email.",
+    "intro": "Ready to power your next project with custom AI, a professional website or a premium mobile application?",
+    "motto": "Determination. Innovation. Impact."
+  },
+  "cookie": {
+    "message": "This site uses cookies and Firebase Analytics to improve your experience.",
+    "accept": "Accept",
+    "decline": "Decline",
+    "privacy_link": "Privacy Policy"
+  },
+  "footer": {
+    "rights": "All rights reserved.",
+    "privacy": "Privacy",
+    "terms": "Terms"
+  }
+}

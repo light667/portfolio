@@ -1,0 +1,99 @@
+{
+  "nav": {
+    "about": "À Propos",
+    "experience": "Expérience",
+    "skills": "Compétences",
+    "services": "Services",
+    "projects": "Projets",
+    "contact": "Contact"
+  },
+  "hero": {
+    "greeting": "Salut, je suis",
+    "cta": "Me contacter",
+    "download_cv": "Télécharger CV",
+    "title1": "Ingénieur IA Junior",
+    "title2": "Développeur Flutter Junior",
+    "tagline": "Détermination. Innovation. Impact. Je transforme des idées complexes en solutions technologiques d'élite."
+  },
+  "about": {
+    "title": "À Propos",
+    "description": "Passionné par l'Intelligence Artificielle et le développement Mobile, je m'engage à fournir des solutions robustes et scalables. Mon approche est guidée par la rigueur scientifique et une volonté constante de repousser les limites de la technologie pour résoudre des problèmes concrets."
+  },
+  "experience": {
+    "title": "Expérience",
+    "exp1": {
+      "role": "AI Intern",
+      "date": "Février 2026 — Présent",
+      "desc": "Formation intensive en IA Générative de A à Z : maîtrise des architectures LLM, conception de pipelines RAG, prompt engineering avancé et développement d'agents IA. Mise en pratique sur des projets concrets intégrant Langchain, ChromaDB et des modèles de pointe."
+    },
+    "exp2": {
+      "role": "Développeur Web & Solutions",
+      "date": "Février 2026 — Présent",
+      "desc": "Contribution volontaire au sein de la team Dev Web & Solutions : conception et développement de sites web professionnels, intégration de solutions digitales et participation active à des projets collaboratifs orientés impact social."
+    }
+  },
+  "skills": {
+    "title": "Expertise Technique"
+  },
+  "services": {
+    "title": "Mes Services",
+    "subtitle": "Des solutions technologiques sur mesure pour propulser votre activité",
+    "s1": {
+      "title": "Chatbots IA & Agents Intelligents",
+      "desc": "Automatisez votre relation client avec des assistants IA sur mesure. Conception d'agents conversationnels intelligents utilisant Langchain, Chainlit et les derniers modèles LLM."
+    },
+    "s2": {
+      "title": "Solutions RAG & Bases Vectorielles",
+      "desc": "Exploitez la puissance de vos données privées grâce à l'IA. Implémentation de systèmes de récupération augmentée avec ChromaDB, Pinecone et Weaviate."
+    },
+    "s3": {
+      "title": "Applications Mobiles",
+      "desc": "Applications cross-platform haute performance avec Flutter & Dart. Des interfaces élégantes et des expériences utilisateur premium sur iOS et Android."
+    },
+    "s4": {
+      "title": "Sites Web & Vitrines",
+      "desc": "Sites professionnels modernes et responsives pour entreprises. Design premium, SEO optimisé et performance garantie pour votre présence en ligne."
+    },
+    "s5": {
+      "title": "Intégration Backend Cloud",
+      "desc": "Architecture backend scalable avec Firebase et Supabase. Authentification, base de données temps réel, stockage et déploiement cloud performant."
+    },
+    "s6": {
+      "title": "Consultation & Stratégie IA",
+      "desc": "Audit technique et conseil stratégique pour intégrer l'IA dans votre entreprise. Identification des opportunités d'automatisation et plan d'implémentation sur mesure."
+    }
+  },
+  "projects": {
+    "title": "Projets Récents",
+    "view_live": "Voir le projet",
+    "view_code": "Code source",
+    "under_construction": "D'autres projets sont en cours de construction..."
+  },
+  "contact": {
+    "title": "Contactez-moi",
+    "name": "Nom complet",
+    "email": "Adresse email",
+    "type": "Type de demande",
+    "type_collab": "Collaboration sur un projet",
+    "type_service": "Demande de service",
+    "type_other": "Autre",
+    "message": "Votre message",
+    "send": "Envoyer le message",
+    "sending": "Envoi en cours...",
+    "success": "Message envoyé avec succès ! Je vous répondrai rapidement.",
+    "error": "Une erreur est survenue. Réessayez ou contactez-moi par email.",
+    "intro": "Prêt à propulser votre prochain projet avec une IA sur-mesure, un site web professionnel ou une application mobile d'excellence ?",
+    "motto": "Détermination. Innovation. Impact."
+  },
+  "cookie": {
+    "message": "Ce site utilise des cookies et Firebase Analytics pour améliorer votre expérience.",
+    "accept": "Accepter",
+    "decline": "Refuser",
+    "privacy_link": "Politique de Confidentialité"
+  },
+  "footer": {
+    "rights": "Tous droits réservés.",
+    "privacy": "Confidentialité",
+    "terms": "Conditions"
+  }
+}
