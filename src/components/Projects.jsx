@@ -54,46 +54,27 @@ const Projects = () => {
           </a>
         </div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-2 gap-6">
+        <div className="grid sm:grid-cols-2 gap-6">
           {projects.map((project, i) => (
-            <motion.div
-              key={project.title}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.1 }}
-              className="group relative rounded-2xl overflow-hidden glass-card p-0 border-white/5 hover:border-neon-cyan/30 transition-all duration-500 bg-white/[0.02]"
-            >
-              {/* Image Container */}
+            <motion.div key={project.title} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }} className="group relative rounded-2xl overflow-hidden glass-card p-0 border-white/5 hover:border-neon-cyan/30 transition-all duration-500 bg-white/[0.02]">
               <div className="h-48 sm:h-56 overflow-hidden relative">
-                <img 
-                  src={project.image} 
-                  alt={`${project.title} - ${project.type}`} 
-                  className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700 opacity-60 group-hover:opacity-90 grayscale-[30%] group-hover:grayscale-0"
-                  loading="lazy"
-                />
+                <img src={project.image} alt={`${project.title} - ${project.type}`} className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700 opacity-60 group-hover:opacity-90 grayscale-[30%] group-hover:grayscale-0" loading="lazy" />
                 <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-dark/90 to-transparent" />
               </div>
-              
               <div className="p-6">
-                 <div className="flex justify-between items-start mb-2">
-                    <span className="text-[10px] uppercase tracking-[0.2em] text-neon-cyan font-bold">{project.type}</span>
-                    <a href={project.link} target="_blank" rel="noreferrer" className="p-1.5 rounded-lg bg-white/5 hover:bg-neon-cyan hover:text-dark transition-all">
-                      <ExternalLink size={16} />
-                    </a>
-                 </div>
-                 <h3 className="text-xl font-bold text-white mb-2">{project.title}</h3>
-                 <p className="text-slate-400 text-sm leading-relaxed mb-4 line-clamp-2">
-                   {project.description}
-                 </p>
-                 
-                 <div className="flex flex-wrap gap-1.5">
-                   {project.stack.map(s => (
-                     <span key={s} className="text-[9px] font-bold px-2 py-0.5 bg-white/5 border border-white/10 rounded-full uppercase tracking-wider text-slate-500">
-                       {s}
-                     </span>
-                   ))}
-                 </div>
+                <div className="flex justify-between items-start mb-2">
+                  <span className="text-[10px] uppercase tracking-[0.2em] text-neon-cyan font-bold">{project.type}</span>
+                  <a href={project.link} target="_blank" rel="noreferrer" className="p-1.5 rounded-lg bg-white/5 hover:bg-neon-cyan hover:text-dark transition-all">
+                    <ExternalLink size={16} />
+                  </a>
+                </div>
+                <h3 className="text-xl font-bold text-white mb-2">{project.title}</h3>
+                <p className="text-slate-400 text-sm leading-relaxed mb-4 line-clamp-2">{project.description}</p>
+                <div className="flex flex-wrap gap-1.5">
+                  {project.stack.map(s => (
+                    <span key={s} className="text-[9px] font-bold px-2 py-0.5 bg-white/5 border border-white/10 rounded-full uppercase tracking-wider text-slate-500">{s}</span>
+                  ))}
+                </div>
               </div>
             </motion.div>
           ))}

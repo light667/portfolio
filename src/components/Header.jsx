@@ -14,9 +14,7 @@ const Header = () => {
   };
 
   useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 50);
-    };
+    const handleScroll = () => setScrolled(window.scrollY > 50);
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
@@ -38,98 +36,48 @@ const Header = () => {
   return (
     <header className={`fixed top-0 w-full z-40 transition-all duration-300 ${scrolled ? 'bg-dark/80 backdrop-blur-lg border-b border-white/10 py-3' : 'bg-transparent py-5'}`}>
       <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
-        {/* Professional Logo/Name */}
-        <motion.a 
-          href="#"
-          initial={{ opacity: 0, x: -20 }}
-          animate={{ opacity: 1, x: 0 }}
-          className="text-xl font-bold tracking-tighter text-white"
-        >
+        <motion.a href="#" initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} className="text-xl font-bold tracking-tighter text-white">
           KOKOU ARMAND <span className="text-neon-cyan font-light italic">DJOSSOU</span>
         </motion.a>
 
-        {/* Desktop Nav */}
         <nav className="hidden md:flex items-center gap-6">
           {navLinks.map((link, i) => (
-            <motion.a
-              key={link.name}
-              href={link.href}
-              initial={{ opacity: 0, y: -10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: i * 0.1 }}
-              className="text-sm font-medium text-slate-400 hover:text-neon-cyan transition-colors"
-            >
+            <motion.a key={link.name} href={link.href} initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: i * 0.1 }} className="text-sm font-medium text-slate-400 hover:text-neon-cyan transition-colors">
               {link.name}
             </motion.a>
           ))}
-          
           <div className="h-4 w-[1px] bg-white/10 mx-1" />
-
-          {/* Social Links */}
           {socialLinks.map((social) => (
-            <a
-              key={social.label}
-              href={social.href}
-              target="_blank"
-              rel="noreferrer"
-              aria-label={social.label}
-              className="p-2 rounded-full hover:bg-white/5 text-slate-400 hover:text-neon-cyan transition-all"
-            >
+            <a key={social.label} href={social.href} target="_blank" rel="noreferrer" aria-label={social.label} className="p-2 rounded-full hover:bg-white/5 text-slate-400 hover:text-neon-cyan transition-all">
               {social.icon}
             </a>
           ))}
-
           <div className="h-4 w-[1px] bg-white/10 mx-1" />
-          
-          <button 
-            onClick={toggleLanguage}
-            className="p-2 rounded-full hover:bg-white/5 text-slate-400 hover:text-neon-cyan transition-all flex items-center gap-2"
-          >
+          <button onClick={toggleLanguage} className="p-2 rounded-full hover:bg-white/5 text-slate-400 hover:text-neon-cyan transition-all flex items-center gap-2">
             <Languages size={18} />
             <span className="text-xs font-bold uppercase">{i18n.language}</span>
           </button>
         </nav>
 
-        {/* Mobile Toggle */}
         <div className="flex items-center gap-3 md:hidden">
           {socialLinks.map((social) => (
-            <a
-              key={social.label}
-              href={social.href}
-              target="_blank"
-              rel="noreferrer"
-              aria-label={social.label}
-              className="p-2 text-slate-400 hover:text-neon-cyan transition-colors"
-            >
+            <a key={social.label} href={social.href} target="_blank" rel="noreferrer" aria-label={social.label} className="p-2 text-slate-400 hover:text-neon-cyan transition-colors">
               {social.icon}
             </a>
           ))}
-          <button onClick={toggleLanguage} className="p-2 text-slate-400">
-            <Languages size={20} />
-          </button>
+          <button onClick={toggleLanguage} className="p-2 text-slate-400"><Languages size={20} /></button>
           <button onClick={() => setIsOpen(!isOpen)} className="text-white p-2">
             {isOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
         </div>
       </div>
 
-      {/* Mobile Menu */}
       <AnimatePresence>
         {isOpen && (
-          <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: 'auto' }}
-            exit={{ opacity: 0, height: 0 }}
-            className="md:hidden bg-dark border-b border-white/10 overflow-hidden"
-          >
+          <motion.div initial={{ opacity: 0, height: 0 }} animate={{ opacity: 1, height: 'auto' }} exit={{ opacity: 0, height: 0 }} className="md:hidden bg-dark border-b border-white/10 overflow-hidden">
             <div className="flex flex-col p-6 gap-4">
               {navLinks.map((link) => (
-                <a
-                  key={link.name}
-                  href={link.href}
-                  onClick={() => setIsOpen(false)}
-                  className="text-lg font-medium text-slate-300 hover:text-neon-cyan transition-colors"
-                >
+                <a key={link.name} href={link.href} onClick={() => setIsOpen(false)} className="text-lg font-medium text-slate-300 hover:text-neon-cyan transition-colors">
                   {link.name}
                 </a>
               ))}

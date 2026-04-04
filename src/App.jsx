@@ -15,7 +15,6 @@ import TermsOfService from './components/TermsOfService';
 import { motion, useScroll, useSpring, AnimatePresence } from 'framer-motion';
 import { ArrowUp } from 'lucide-react';
 
-// Scroll to top button component
 const ScrollToTop = () => {
   const [visible, setVisible] = useState(false);
 
@@ -45,7 +44,6 @@ const ScrollToTop = () => {
   );
 };
 
-// Main portfolio page
 const PortfolioPage = () => {
   const { scrollYProgress } = useScroll();
   const scaleX = useSpring(scrollYProgress, {
@@ -56,7 +54,6 @@ const PortfolioPage = () => {
 
   return (
     <div className="min-h-screen selection:bg-neon-cyan selection:text-dark">
-      {/* Progress Bar */}
       <motion.div
         className="fixed top-0 left-0 right-0 h-1 bg-neon-cyan origin-left z-50 shadow-[0_0_10px_#06b6d4]"
         style={{ scaleX }}

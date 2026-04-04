@@ -2,11 +2,8 @@ import React, { useState, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
 import { Mail, MessageSquare, Send, ArrowRight, CheckCircle, AlertCircle, Loader2 } from 'lucide-react';
-import emailjs from '@emailjs/browser';
 
-const EMAILJS_SERVICE_ID = 'service_dudg5uj';
-const EMAILJS_TEMPLATE_ID = 'template_portfolio'; // Create this template in EmailJS dashboard
-const EMAILJS_PUBLIC_KEY = 'h9un1D02pg4OBp08V';
+const FORMSPREE_URL = 'https://formspree.io/f/xgoppyvo';
 
 const Contact = () => {
   const { t } = useTranslation();
@@ -17,7 +14,7 @@ const Contact = () => {
     type: '',
     message: ''
   });
-  const [status, setStatus] = useState('idle'); // idle, sending, success, error
+  const [status, setStatus] = useState('idle');
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -30,17 +27,21 @@ const Contact = () => {
     setStatus('sending');
 
     try {
-      await emailjs.sendForm(
-        EMAILJS_SERVICE_ID,
-        EMAILJS_TEMPLATE_ID,
-        formRef.current,
-        EMAILJS_PUBLIC_KEY
-      );
-      setStatus('success');
-      setFormData({ name: '', email: '', type: '', message: '' });
+      const response = await fetch(FORMSPREE_URL, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData)
+      });
+
+      if (response.ok) {
+        setStatus('success');
+        setFormData({ name: '', email: '', type: '', message: '' });
+      } else {
+        setStatus('error');
+      }
       setTimeout(() => setStatus('idle'), 5000);
     } catch (error) {
-      console.error('EmailJS error:', error);
+      console.error('Form error:', error);
       setStatus('error');
       setTimeout(() => setStatus('idle'), 5000);
     }
@@ -153,41 +154,24 @@ const Contact = () => {
               <button
                 type="submit"
                 disabled={status === 'sending'}
-                className={`btn-primary w-full justify-center group ${
-                  status === 'sending' ? 'opacity-70 cursor-not-allowed' : ''
-                }`}
+                className={`btn-primary w-full justify-center group ${status === 'sending' ? 'opacity-70 cursor-not-allowed' : ''}`}
               >
                 {status === 'sending' ? (
-                  <>
-                    {t('contact.sending')}
-                    <Loader2 size={18} className="animate-spin" />
-                  </>
+                  <>{t('contact.sending')}<Loader2 size={18} className="animate-spin" /></>
                 ) : (
-                  <>
-                    {t('contact.send')}
-                    <Send size={18} className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
-                  </>
+                  <>{t('contact.send')}<Send size={18} className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" /></>
                 )}
               </button>
 
-              {/* Status Messages */}
               {status === 'success' && (
-                <motion.div
-                  initial={{ opacity: 0, y: 10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  className="flex items-center gap-3 p-4 bg-emerald-500/10 border border-emerald-500/20 rounded-xl"
-                >
+                <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} className="flex items-center gap-3 p-4 bg-emerald-500/10 border border-emerald-500/20 rounded-xl">
                   <CheckCircle size={20} className="text-emerald-500 flex-shrink-0" />
                   <p className="text-emerald-400 text-sm">{t('contact.success')}</p>
                 </motion.div>
               )}
 
               {status === 'error' && (
-                <motion.div
-                  initial={{ opacity: 0, y: 10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  className="flex items-center gap-3 p-4 bg-red-500/10 border border-red-500/20 rounded-xl"
-                >
+                <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} className="flex items-center gap-3 p-4 bg-red-500/10 border border-red-500/20 rounded-xl">
                   <AlertCircle size={20} className="text-red-500 flex-shrink-0" />
                   <p className="text-red-400 text-sm">{t('contact.error')}</p>
                 </motion.div>
