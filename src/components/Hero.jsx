@@ -44,7 +44,7 @@ const Hero = () => {
           </div>
         </motion.div>
 
-        <motion.div initial={{ opacity: 0, scale: 0.8 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 1, ease: "easeOut" }} className="relative group hidden sm:block">
+        <motion.div initial={{ opacity: 0, scale: 0.8 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 1, ease: "easeOut" }} className="relative group mt-16 md:mt-0">
           <div className="absolute inset-0 border-2 border-neon-cyan/20 rounded-full animate-[spin_10s_linear_infinite]" />
           <div className="absolute -inset-4 border border-neon-purple/20 rounded-full animate-[spin_15s_linear_infinite_reverse]" />
           
