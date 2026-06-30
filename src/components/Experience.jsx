@@ -21,7 +21,7 @@ const Experience = () => {
       id: 'exp2',
       role: t('experience.exp2.role'),
       company: 'Neuractif Initiatives',
-      companyUrl: null,
+      companyUrl: 'https://neuractif.org/en/',
       date: t('experience.exp2.date'),
       description: t('experience.exp2.desc'),
       tags: ['HTML', 'CSS', 'JavaScript', 'React', 'Web Solutions'],

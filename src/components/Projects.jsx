@@ -8,6 +8,14 @@ const Projects = () => {
 
   const projects = [
     {
+      title: "FlyAI",
+      type: "Multiplateforme App & AI",
+      link: "https://fly-ai-page.vercel.app/",
+      stack: ["Flutter","Next.js", "Firebase","Groq API","Mistral AI","TailwindCSS", "Supabase" ,"Langchain", "RAG"],
+      description: "Plateforme de génération de contenu et d'images par IA pour les entreprises.",
+      image: "/projects/flyai.jpg"
+    },
+    {
       title: "PulseAI",
       type: "Mobile App & AI",
       link: "https://pulseai-a0548.web.app/",
