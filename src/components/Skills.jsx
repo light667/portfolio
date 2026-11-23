@@ -34,7 +34,7 @@ const Skills = () => {
                   </div>
                   <ul className="flex flex-wrap gap-2">
                     {group.items.map((skill) => (
-                      <li key={skill} className={primary ? 'chip-brand !text-sm' : 'chip-neutral !text-sm'}>
+                      <li key={skill} className={`${primary ? 'chip-brand' : 'chip-neutral'} !text-sm cursor-default transition-all duration-200 hover:-translate-y-0.5 hover:bg-ink hover:text-white`}>
                         {skill}
                       </li>
                     ))}

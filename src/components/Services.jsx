@@ -31,7 +31,7 @@ const Services = () => {
                 <article className="group h-full rounded-xl border-2 border-ink bg-white p-6 shadow-hard transition-transform duration-200 hover:-translate-y-1 sm:p-8">
                   <div className="mb-6 flex items-center justify-between">
                     <span
-                      className={`grid h-12 w-12 place-items-center rounded-lg border-2 border-ink ${
+                      className={`grid h-12 w-12 place-items-center rounded-lg border-2 border-ink transition-transform duration-300 group-hover:-rotate-6 group-hover:scale-110 ${
                         i % 2 === 0 ? 'bg-brand-100 text-brand-700' : 'bg-flame-100 text-flame-600'
                       }`}
                     >

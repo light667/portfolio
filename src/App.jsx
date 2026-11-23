@@ -5,6 +5,8 @@ import Header from './components/Header';
 import Hero from './components/Hero';
 import About from './components/About';
 import Services from './components/Services';
+import Pipelines from './components/Pipelines';
+import BootScreen from './components/fx/BootScreen';
 import Experience from './components/Experience';
 import Projects from './components/Projects';
 import Skills from './components/Skills';
@@ -29,12 +31,14 @@ const PortfolioPage = () => {
       </a>
       <motion.div className="fixed inset-x-0 top-0 z-50 h-1 origin-left bg-flame-500" style={{ scaleX }} />
 
+      <BootScreen />
       <Header />
 
       <main>
         <Hero />
         <About />
         <Services />
+        <Pipelines />
         <Experience />
         <Projects />
         <Skills />

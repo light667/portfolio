@@ -1,5 +1,6 @@
 import React from 'react';
 import Reveal from './Reveal';
+import ScrambleText from '../fx/ScrambleText';
 
 const SectionHeading = ({ label, title, subtitle, tone = 'light', children }) => {
   const dark = tone === 'dark';
@@ -8,7 +9,7 @@ const SectionHeading = ({ label, title, subtitle, tone = 'light', children }) =>
       <div className="max-w-3xl">
         <p className={`eyebrow mb-4 ${dark ? 'text-flame-200' : 'text-brand-700'}`}>
           <span className={`h-[2px] w-8 ${dark ? 'bg-flame-500' : 'bg-flame-500'}`} />
-          {label}
+          <ScrambleText text={label} />
         </p>
         <h2 className={`section-title ${dark ? 'text-white' : 'text-ink'}`}>{title}</h2>
         {subtitle && (

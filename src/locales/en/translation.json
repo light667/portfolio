@@ -15,6 +15,7 @@
   },
   "hero": {
     "eyebrow": "AI & Machine Learning Engineer",
+    "roles": ["Machine Learning Engineer", "RAG & LLM systems", "AI agents & tool calling", "Data → Model → Product"],
     "first_names": "Kokou Armand",
     "lead": "I build end-to-end AI systems: from data preparation to evaluated models, all the way to RAG assistants and conversational agents that serve real users.",
     "location": "Lomé, Togo",
@@ -70,8 +71,72 @@
       }
     ]
   },
+  "pipelines": {
+    "label": "03 — Under the hood",
+    "title": "My systems, running.",
+    "subtitle": "Three architectures I design and ship. Pick one and watch it run, step by step.",
+    "running": "running",
+    "replay": "Replay",
+    "modes": {
+      "rag": {
+        "tab": "RAG pipeline",
+        "steps": [
+          { "name": "Question", "tool": "natural language" },
+          { "name": "Embedding", "tool": "Mistral embed" },
+          { "name": "Retrieval", "tool": "ChromaDB · top-k" },
+          { "name": "Context", "tool": "re-ranking" },
+          { "name": "Generation", "tool": "Mistral · Gemini" },
+          { "name": "Answer", "tool": "cited sources" }
+        ],
+        "logs": [
+          "query: \"What coverage obligations apply to a mobile operator?\"",
+          "embed(query) → dense vector",
+          "chroma.similarity_search(k=4) → 4 relevant passages",
+          "rerank(passages) → 3 passages kept in context",
+          "llm.generate(prompt + context) · low temperature",
+          "✓ answer grounded in sources [1] [2] [3]"
+        ]
+      },
+      "ml": {
+        "tab": "ML pipeline",
+        "steps": [
+          { "name": "Data", "tool": "Pandas · SQL" },
+          { "name": "Cleaning", "tool": "imputation · IQR" },
+          { "name": "Features", "tool": "feature engineering" },
+          { "name": "Training", "tool": "scikit-learn · LightGBM" },
+          { "name": "Evaluation", "tool": "AUC · recall · F1" },
+          { "name": "Serving", "tool": "FastAPI" }
+        ],
+        "logs": [
+          "load(\"telco.csv\") → 7,043 rows × 21 columns",
+          "TotalCharges: 11 blank values detected → fixed",
+          "+3 features: TenureGroup, NumServices, AvgChargePerService",
+          "cross_validate(LogReg, RandomForest, GradientBoosting)",
+          "models compared on business metrics",
+          "✓ pipeline serialized → POST /predict"
+        ]
+      },
+      "agent": {
+        "tab": "Tool-using agent",
+        "steps": [
+          { "name": "Message", "tool": "customer · web" },
+          { "name": "Reasoning", "tool": "LLM · intent" },
+          { "name": "Tool", "tool": "create_order · Zod" },
+          { "name": "Confirmation", "tool": "human in the loop" },
+          { "name": "Action", "tool": "live dashboard" }
+        ],
+        "logs": [
+          "user: \"2 grilled chickens, delivery to Bè\"",
+          "llm → intent: order · 2 items recognized",
+          "tool_call create_order({ items, delivery }) · schema validated",
+          "summary computed by code → awaiting confirmation",
+          "✓ order confirmed → sent to the dashboard"
+        ]
+      }
+    }
+  },
   "experience": {
-    "label": "03 — Experience",
+    "label": "04 — Experience",
     "title": "Professional experience",
     "view": "See the work",
     "items": {
@@ -110,7 +175,7 @@
     }
   },
   "projects": {
-    "label": "04 — Projects",
+    "label": "05 — Projects",
     "title": "Selected AI projects",
     "subtitle": "Machine Learning, RAG, agents and AI products, built during internships, hackathons or on my own.",
     "all_github": "See everything on GitHub",
@@ -180,7 +245,7 @@
     }
   },
   "skills": {
-    "label": "05 — Skills",
+    "label": "06 — Skills",
     "title": "Technical toolbox",
     "groups": [
       {
@@ -206,7 +271,7 @@
     ]
   },
   "achievements": {
-    "label": "06 — Hackathons & certifications",
+    "label": "07 — Hackathons & certifications",
     "title": "Competitions and certifications",
     "hackathons_title": "Hackathons",
     "hackathons": ["AI4Youth", "TogoCodeRun", "Smart Junior Enterprise Challenge", "Africa Developers Hackathon"],
@@ -220,7 +285,7 @@
     "interests": ["Applied AI for business", "Entrepreneurship", "Hackathons", "Open source", "Digital & educational outreach"]
   },
   "contact": {
-    "label": "07 — Contact",
+    "label": "08 — Contact",
     "title": "Let's talk about your AI project.",
     "intro": "Internship, full-time role, freelance work or collaboration in AI and Machine Learning: drop me a line, I reply quickly.",
     "name": "Full name",

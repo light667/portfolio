@@ -40,9 +40,36 @@ export default {
           from: { transform: 'translateX(0)' },
           to: { transform: 'translateX(-50%)' },
         },
+        scan: {
+          '0%': { top: '0%', opacity: '0' },
+          '10%': { opacity: '1' },
+          '90%': { opacity: '1' },
+          '100%': { top: '100%', opacity: '0' },
+        },
+        flow: {
+          to: { strokeDashoffset: '-24' },
+        },
+        float: {
+          '0%, 100%': { transform: 'translateY(0)' },
+          '50%': { transform: 'translateY(-8px)' },
+        },
+        bar: {
+          '0%, 100%': { transform: 'scaleY(0.35)' },
+          '50%': { transform: 'scaleY(1)' },
+        },
+        sweep: {
+          '0%': { transform: 'translateY(-100%)' },
+          '100%': { transform: 'translateY(400%)' },
+        },
       },
       animation: {
         marquee: 'marquee 40s linear infinite',
+        'marquee-reverse': 'marquee 45s linear infinite reverse',
+        scan: 'scan 3.6s ease-in-out infinite',
+        flow: 'flow 0.8s linear infinite',
+        float: 'float 4s ease-in-out infinite',
+        bar: 'bar 1.6s ease-in-out infinite',
+        sweep: 'sweep 2.4s ease-in-out infinite',
       },
     },
   },

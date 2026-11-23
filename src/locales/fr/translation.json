@@ -15,6 +15,7 @@
   },
   "hero": {
     "eyebrow": "AI & Machine Learning Engineer",
+    "roles": ["Machine Learning Engineer", "Systèmes RAG & LLM", "Agents IA & tool calling", "Data → Modèle → Produit"],
     "first_names": "Kokou Armand",
     "lead": "Je conçois des systèmes d'IA de bout en bout : de la préparation des données au modèle évalué, jusqu'aux assistants RAG et aux agents conversationnels qui servent de vrais utilisateurs.",
     "location": "Lomé, Togo",
@@ -70,8 +71,72 @@
       }
     ]
   },
+  "pipelines": {
+    "label": "03 — Sous le capot",
+    "title": "Mes systèmes, en action.",
+    "subtitle": "Trois architectures que je conçois et mets en production. Choisissez-en une et regardez-la s'exécuter, étape par étape.",
+    "running": "exécution",
+    "replay": "Rejouer",
+    "modes": {
+      "rag": {
+        "tab": "Pipeline RAG",
+        "steps": [
+          { "name": "Question", "tool": "langage naturel" },
+          { "name": "Embedding", "tool": "Mistral embed" },
+          { "name": "Recherche", "tool": "ChromaDB · top-k" },
+          { "name": "Contexte", "tool": "re-ranking" },
+          { "name": "Génération", "tool": "Mistral · Gemini" },
+          { "name": "Réponse", "tool": "sources citées" }
+        ],
+        "logs": [
+          "query: \"Quelles obligations de couverture pour un opérateur mobile ?\"",
+          "embed(query) → vecteur dense",
+          "chroma.similarity_search(k=4) → 4 passages pertinents",
+          "rerank(passages) → 3 passages retenus dans le contexte",
+          "llm.generate(prompt + contexte) · température basse",
+          "✓ réponse fondée sur les sources [1] [2] [3]"
+        ]
+      },
+      "ml": {
+        "tab": "Pipeline ML",
+        "steps": [
+          { "name": "Données", "tool": "Pandas · SQL" },
+          { "name": "Nettoyage", "tool": "imputation · IQR" },
+          { "name": "Features", "tool": "feature engineering" },
+          { "name": "Entraînement", "tool": "scikit-learn · LightGBM" },
+          { "name": "Évaluation", "tool": "AUC · rappel · F1" },
+          { "name": "Service", "tool": "FastAPI" }
+        ],
+        "logs": [
+          "load(\"telco.csv\") → 7 043 lignes × 21 colonnes",
+          "TotalCharges : 11 valeurs vides détectées → corrigées",
+          "+3 features : TenureGroup, NumServices, AvgChargePerService",
+          "cross_validate(LogReg, RandomForest, GradientBoosting)",
+          "comparaison des modèles sur les métriques métier",
+          "✓ pipeline sérialisé → POST /predict"
+        ]
+      },
+      "agent": {
+        "tab": "Agent à outils",
+        "steps": [
+          { "name": "Message", "tool": "client · web" },
+          { "name": "Raisonnement", "tool": "LLM · intention" },
+          { "name": "Outil", "tool": "create_order · Zod" },
+          { "name": "Confirmation", "tool": "humain dans la boucle" },
+          { "name": "Action", "tool": "dashboard temps réel" }
+        ],
+        "logs": [
+          "user: \"2 poulets braisés, livraison à Bè\"",
+          "llm → intention : commande · 2 articles reconnus",
+          "tool_call create_order({ items, delivery }) · schéma validé",
+          "récapitulatif calculé par le code → attente de confirmation",
+          "✓ commande confirmée → envoyée au tableau de bord"
+        ]
+      }
+    }
+  },
   "experience": {
-    "label": "03 — Expérience",
+    "label": "04 — Expérience",
     "title": "Expérience professionnelle",
     "view": "Voir le travail",
     "items": {
@@ -110,7 +175,7 @@
     }
   },
   "projects": {
-    "label": "04 — Projets",
+    "label": "05 — Projets",
     "title": "Projets IA sélectionnés",
     "subtitle": "Machine Learning, RAG, agents et produits IA : des projets menés en stage, en hackathon ou en autonomie.",
     "all_github": "Tout voir sur GitHub",
@@ -180,7 +245,7 @@
     }
   },
   "skills": {
-    "label": "05 — Compétences",
+    "label": "06 — Compétences",
     "title": "Boîte à outils technique",
     "groups": [
       {
@@ -206,7 +271,7 @@
     ]
   },
   "achievements": {
-    "label": "06 — Hackathons & certifications",
+    "label": "07 — Hackathons & certifications",
     "title": "Compétitions et certifications",
     "hackathons_title": "Hackathons",
     "hackathons": ["AI4Youth", "TogoCodeRun", "Challenge Smart Junior Enterprise", "Africa Developers Hackathon"],
@@ -220,7 +285,7 @@
     "interests": ["IA appliquée aux entreprises", "Entrepreneuriat", "Hackathons", "Open source", "Engagement numérique et éducatif"]
   },
   "contact": {
-    "label": "07 — Contact",
+    "label": "08 — Contact",
     "title": "Parlons de votre projet IA.",
     "intro": "Stage, poste, mission ou collaboration autour de l'IA et du Machine Learning : écrivez-moi, je réponds rapidement.",
     "name": "Nom complet",
