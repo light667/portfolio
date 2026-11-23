@@ -1,73 +1,88 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
-import { Download, Send } from 'lucide-react';
+import { ArrowDownRight, Download, MapPin } from 'lucide-react';
+import { PROFILE, MARQUEE } from '../data/portfolio';
+
+const ease = [0.22, 1, 0.36, 1];
 
 const Hero = () => {
   const { t } = useTranslation();
+  const stats = t('hero.stats', { returnObjects: true });
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden">
-      <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-neon-cyan/10 rounded-full blur-[120px] -z-10 animate-pulse" />
-      <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-neon-purple/10 rounded-full blur-[120px] -z-10 animate-pulse delay-700" />
+    <section id="top" className="relative overflow-hidden">
+      <div className="dot-grid pointer-events-none absolute inset-0 [mask-image:linear-gradient(to_bottom,black,transparent_85%)]" />
 
-      <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
-        <motion.div initial={{ opacity: 0, x: -50 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.8, ease: "easeOut" }}>
-          <motion.p initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }} className="text-neon-cyan font-mono font-bold tracking-widest mb-4 flex items-center gap-2">
-            <span className="w-8 h-[2px] bg-neon-cyan" />
-            {t('hero.greeting')}
-          </motion.p>
-          
-          <h1 className="text-5xl sm:text-6xl md:text-8xl font-black text-white leading-none mb-6">
-            Kokou Armand <br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-neon-cyan via-white to-neon-purple">
-              Light DJOSSOU
-            </span>
+      <div className="container-page relative grid items-center gap-14 pb-16 pt-28 md:pt-36 lg:grid-cols-12 lg:gap-10 lg:pb-24">
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, ease }}
+          className="lg:col-span-7"
+        >
+          <p className="eyebrow mb-3 text-brand-700">
+            <span className="h-[2px] w-8 bg-flame-500" />
+            {t('hero.eyebrow')}
+          </p>
+
+          <h1 className="font-display font-bold leading-[0.92] tracking-tight text-ink">
+            <span className="block text-2xl font-medium text-slate-500 sm:text-3xl">{t('hero.first_names')}</span>
+            <span className="mt-2 block text-[3.4rem] sm:text-7xl lg:text-[5.5rem]">Light</span>
+            <span className="block text-[3.4rem] text-brand-600 sm:text-7xl lg:text-[5.5rem]">DJOSSOU</span>
           </h1>
 
-          <div className="flex flex-col gap-2 mb-8">
-            <h2 className="text-xl sm:text-2xl md:text-3xl font-light text-slate-400">{t('hero.title1')}</h2>
-            <h2 className="text-xl sm:text-2xl md:text-3xl font-light text-slate-400">{t('hero.title2')}</h2>
-          </div>
+          <p className="mt-7 max-w-xl text-lg leading-relaxed text-slate-600 sm:text-xl">{t('hero.lead')}</p>
 
-          <p className="text-slate-500 italic mb-8 max-w-md">"{t('hero.tagline')}"</p>
-
-          <div className="flex flex-wrap gap-4">
-            <motion.a href="#contact" whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="btn-primary">
-              {t('hero.cta')}
-              <Send size={18} />
-            </motion.a>
-            <motion.a href="/cv.pdf" download="CV_Kokou_Armand_Light_DJOSSOU.pdf" whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="px-6 py-3 border border-white/20 rounded-full font-bold hover:bg-white/5 transition-all flex items-center gap-2 text-slate-300 cursor-pointer hover:border-neon-cyan/50">
-              {t('hero.download_cv')}
+          <div className="mt-9 flex flex-col gap-4 sm:flex-row">
+            <a href="#projects" className="btn-cta">
+              {t('hero.cta_projects')}
+              <ArrowDownRight size={18} />
+            </a>
+            <a href={PROFILE.cv} download={PROFILE.cvFileName} className="btn-ghost">
+              {t('hero.cta_cv')}
               <Download size={18} />
-            </motion.a>
+            </a>
           </div>
         </motion.div>
 
-        <motion.div initial={{ opacity: 0, scale: 0.8 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 1, ease: "easeOut" }} className="relative group mt-16 md:mt-0">
-          <div className="absolute inset-0 border-2 border-neon-cyan/20 rounded-full animate-[spin_10s_linear_infinite]" />
-          <div className="absolute -inset-4 border border-neon-purple/20 rounded-full animate-[spin_15s_linear_infinite_reverse]" />
-          
-          <div className="relative w-64 h-64 md:w-96 md:h-96 mx-auto">
-            <div className="absolute inset-0 bg-gradient-to-tr from-neon-cyan to-neon-purple rounded-[40%] animate-[morph_8s_ease-in-out_infinite] blur-2xl opacity-20" />
-            <div className="relative w-full h-full rounded-[40%] animate-[morph_8s_ease-in-out_infinite] overflow-hidden border-2 border-white/10 group-hover:border-neon-cyan/50 transition-colors">
-              <img src="/photo.jpg" alt="DJOSSOU Light - Ingénieur IA & Développeur Flutter" className="w-full h-full object-cover scale-110 group-hover:scale-100 transition-transform duration-700" />
-            </div>
+        <motion.div
+          initial={{ opacity: 0, y: 24, rotate: -2 }}
+          animate={{ opacity: 1, y: 0, rotate: 0 }}
+          transition={{ duration: 0.8, delay: 0.15, ease }}
+          className="relative mx-auto w-full max-w-[22rem] sm:max-w-sm lg:col-span-5 lg:max-w-none lg:pl-6"
+        >
+          <div className="absolute inset-0 translate-x-4 translate-y-4 rounded-2xl border-2 border-ink bg-brand-600 lg:left-6" />
+          <div className="relative overflow-hidden rounded-2xl border-2 border-ink bg-brand-100">
+            <img
+              src="/photo.jpg"
+              alt={t('hero.photo_alt')}
+              width="900"
+              height="1080"
+              fetchpriority="high"
+              className="aspect-[4/5] w-full object-cover object-[50%_20%]"
+            />
           </div>
 
-          <motion.div animate={{ y: [0, -10, 0] }} transition={{ duration: 3, repeat: Infinity }} className="absolute top-10 -left-8 sm:-left-12 glass-card px-4 py-2 border-neon-cyan/30 z-20">
-            <span className="text-[10px] font-bold text-neon-cyan uppercase">AI Engineer</span>
-          </motion.div>
-          <motion.div animate={{ y: [0, 10, 0] }} transition={{ duration: 4, repeat: Infinity }} className="absolute bottom-10 -right-8 sm:-right-12 glass-card px-4 py-2 border-neon-purple/30 z-20">
-            <span className="text-[10px] font-bold text-neon-purple uppercase">Flutter Dev</span>
-          </motion.div>
-          <motion.div animate={{ x: [0, 5, 0] }} transition={{ duration: 3.5, repeat: Infinity }} className="absolute top-1/2 -left-16 sm:-left-20 glass-card px-4 py-2 border-neon-lime/30 z-20 hidden lg:block">
-            <span className="text-[10px] font-bold text-neon-lime uppercase">ML Engineer</span>
-          </motion.div>
-          <motion.div animate={{ x: [0, -5, 0] }} transition={{ duration: 4.5, repeat: Infinity }} className="absolute top-1/2 -right-16 sm:-right-20 glass-card px-4 py-2 border-blue-500/30 z-20 hidden lg:block">
-            <span className="text-[10px] font-bold text-blue-500 uppercase">Data Science</span>
-          </motion.div>
+          <div className="absolute -left-3 top-8 rotate-[-6deg] rounded-lg border-2 border-ink bg-flame-500 px-3 py-2 font-mono text-xs font-medium text-white shadow-hard-sm sm:-left-6">
+            {t('hero.sticker')}
+          </div>
+
+          <div className="absolute -bottom-6 -right-2 rounded-xl border-2 border-ink bg-white px-4 py-3 shadow-hard sm:-right-4">
+            <p className="font-mono text-[10px] uppercase tracking-widest text-slate-500">model.fit()</p>
+          </div>
         </motion.div>
+      </div>
+
+      <div className="relative border-y-2 border-ink bg-brand-600 py-4 text-white" aria-hidden="true">
+        <div className="flex w-max animate-marquee gap-10 whitespace-nowrap font-mono text-sm uppercase tracking-widest">
+          {[...MARQUEE, ...MARQUEE].map((item, i) => (
+            <span key={i} className="flex items-center gap-10">
+              {item}
+              <span className="text-flame-200">✦</span>
+            </span>
+          ))}
+        </div>
       </div>
     </section>
   );

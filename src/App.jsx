@@ -1,78 +1,48 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { motion, useScroll, useSpring } from 'framer-motion';
 import Header from './components/Header';
 import Hero from './components/Hero';
 import About from './components/About';
-import Experience from './components/Experience';
-import Skills from './components/Skills';
 import Services from './components/Services';
+import Experience from './components/Experience';
 import Projects from './components/Projects';
+import Skills from './components/Skills';
+import Achievements from './components/Achievements';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import CookieNotice from './components/CookieNotice';
 import PrivacyPolicy from './components/PrivacyPolicy';
 import TermsOfService from './components/TermsOfService';
-import { motion, useScroll, useSpring, AnimatePresence } from 'framer-motion';
-import { ArrowUp } from 'lucide-react';
-
-const ScrollToTop = () => {
-  const [visible, setVisible] = useState(false);
-
-  useEffect(() => {
-    const toggle = () => setVisible(window.scrollY > 400);
-    window.addEventListener('scroll', toggle);
-    return () => window.removeEventListener('scroll', toggle);
-  }, []);
-
-  const scrollUp = () => window.scrollTo({ top: 0, behavior: 'smooth' });
-
-  return (
-    <AnimatePresence>
-      {visible && (
-        <motion.button
-          initial={{ opacity: 0, scale: 0.8 }}
-          animate={{ opacity: 1, scale: 1 }}
-          exit={{ opacity: 0, scale: 0.8 }}
-          onClick={scrollUp}
-          aria-label="Scroll to top"
-          className="fixed bottom-6 right-6 z-50 p-3 bg-neon-cyan text-dark rounded-full shadow-lg shadow-neon-cyan/25 hover:bg-white transition-all hover:scale-110"
-        >
-          <ArrowUp size={20} />
-        </motion.button>
-      )}
-    </AnimatePresence>
-  );
-};
 
 const PortfolioPage = () => {
   const { scrollYProgress } = useScroll();
-  const scaleX = useSpring(scrollYProgress, {
-    stiffness: 100,
-    damping: 30,
-    restDelta: 0.001
-  });
+  const scaleX = useSpring(scrollYProgress, { stiffness: 120, damping: 30, restDelta: 0.001 });
 
   return (
-    <div className="min-h-screen selection:bg-neon-cyan selection:text-dark">
-      <motion.div
-        className="fixed top-0 left-0 right-0 h-1 bg-neon-cyan origin-left z-50 shadow-[0_0_10px_#06b6d4]"
-        style={{ scaleX }}
-      />
-      
+    <div className="min-h-screen">
+      <a
+        href="#about"
+        className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[70] focus:rounded-lg focus:bg-ink focus:px-4 focus:py-2 focus:text-white"
+      >
+        Skip to content
+      </a>
+      <motion.div className="fixed inset-x-0 top-0 z-50 h-1 origin-left bg-flame-500" style={{ scaleX }} />
+
       <Header />
-      
+
       <main>
         <Hero />
         <About />
-        <Experience />
-        <Skills />
         <Services />
+        <Experience />
         <Projects />
+        <Skills />
+        <Achievements />
         <Contact />
       </main>
 
       <Footer />
-      <ScrollToTop />
       <CookieNotice />
     </div>
   );

@@ -1,40 +1,50 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import { motion } from 'framer-motion';
-import { BrainCircuit, DatabaseZap, Smartphone, Globe, Cloud, Lightbulb } from 'lucide-react';
+import { BrainCircuit, FileSearch, Bot, DatabaseZap } from 'lucide-react';
+import SectionHeading from './ui/SectionHeading';
+import Reveal from './ui/Reveal';
+
+const ICONS = [BrainCircuit, FileSearch, Bot, DatabaseZap];
 
 const Services = () => {
   const { t } = useTranslation();
-
-  const services = [
-    { id: "s1", icon: <BrainCircuit size={36} className="text-neon-cyan" />, title: t('services.s1.title'), desc: t('services.s1.desc'), gradient: "from-neon-cyan/20 to-transparent" },
-    { id: "s2", icon: <DatabaseZap size={36} className="text-neon-purple" />, title: t('services.s2.title'), desc: t('services.s2.desc'), gradient: "from-neon-purple/20 to-transparent" },
-    { id: "s3", icon: <Smartphone size={36} className="text-neon-lime" />, title: t('services.s3.title'), desc: t('services.s3.desc'), gradient: "from-neon-lime/20 to-transparent" },
-    { id: "s4", icon: <Globe size={36} className="text-blue-500" />, title: t('services.s4.title'), desc: t('services.s4.desc'), gradient: "from-blue-500/20 to-transparent" },
-    { id: "s5", icon: <Cloud size={36} className="text-amber-500" />, title: t('services.s5.title'), desc: t('services.s5.desc'), gradient: "from-amber-500/20 to-transparent" },
-    { id: "s6", icon: <Lightbulb size={36} className="text-rose-500" />, title: t('services.s6.title'), desc: t('services.s6.desc'), gradient: "from-rose-500/20 to-transparent" },
-  ];
+  const items = t('expertise.items', { returnObjects: true });
 
   return (
-    <section id="services" className="py-24 relative overflow-hidden">
-      <div className="max-w-7xl mx-auto px-6">
-        <h2 className="section-title">
-          <span className="text-neon-cyan italic font-mono">04.</span>
-          {t('services.title')}
-        </h2>
-        <p className="text-slate-400 text-lg mb-12 -mt-6 max-w-2xl">{t('services.subtitle')}</p>
+    <section id="expertise" className="section relative overflow-hidden border-y-2 border-ink bg-brand-600">
+      <div className="pointer-events-none absolute -right-24 -top-24 h-72 w-72 rounded-full border-2 border-white/15" aria-hidden="true" />
+      <div className="pointer-events-none absolute -right-8 -top-8 h-40 w-40 rounded-full border-2 border-white/15" aria-hidden="true" />
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {services.map((service, i) => (
-            <motion.div key={service.id} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }} whileHover={{ y: -8 }} className="group glass-card border-none overflow-hidden relative">
-              <div className={`absolute top-0 right-0 w-32 h-32 bg-gradient-to-br ${service.gradient} blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500`} />
-              <div className="relative z-10">
-                <div className="mb-5 p-4 bg-white/5 rounded-2xl w-fit group-hover:scale-110 transition-transform duration-500">{service.icon}</div>
-                <h3 className="text-lg font-bold text-white mb-3 group-hover:text-neon-cyan transition-colors leading-tight">{service.title}</h3>
-                <p className="text-slate-400 text-sm leading-relaxed">{service.desc}</p>
-              </div>
-            </motion.div>
-          ))}
+      <div className="container-page relative">
+        <SectionHeading
+          tone="dark"
+          label={t('expertise.label')}
+          title={t('expertise.title')}
+          subtitle={t('expertise.subtitle')}
+        />
+
+        <div className="grid gap-6 sm:grid-cols-2">
+          {items.map((item, i) => {
+            const Icon = ICONS[i];
+            return (
+              <Reveal key={item.title} delay={i * 0.06}>
+                <article className="group h-full rounded-xl border-2 border-ink bg-white p-6 shadow-hard transition-transform duration-200 hover:-translate-y-1 sm:p-8">
+                  <div className="mb-6 flex items-center justify-between">
+                    <span
+                      className={`grid h-12 w-12 place-items-center rounded-lg border-2 border-ink ${
+                        i % 2 === 0 ? 'bg-brand-100 text-brand-700' : 'bg-flame-100 text-flame-600'
+                      }`}
+                    >
+                      <Icon size={24} />
+                    </span>
+                    <span className="font-mono text-sm text-slate-400">0{i + 1}</span>
+                  </div>
+                  <h3 className="mb-3 text-2xl font-bold text-ink">{item.title}</h3>
+                  <p className="leading-relaxed text-slate-600">{item.desc}</p>
+                </article>
+              </Reveal>
+            );
+          })}
         </div>
       </div>
     </section>

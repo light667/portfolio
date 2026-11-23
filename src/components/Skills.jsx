@@ -1,72 +1,48 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import { motion } from 'framer-motion';
-import { BrainCircuit, MonitorSmartphone, Sparkles, GitBranch } from 'lucide-react';
+import { BrainCircuit, Sparkles, Database, Wrench } from 'lucide-react';
+import SectionHeading from './ui/SectionHeading';
+import Reveal from './ui/Reveal';
+
+const ICONS = { ml: BrainCircuit, genai: Sparkles, data: Database, dev: Wrench };
 
 const Skills = () => {
   const { t } = useTranslation();
-
-  const skillGroups = [
-    {
-      title: "AI, ML & Data Science",
-      icon: <BrainCircuit className="text-neon-cyan" />,
-      skills: ["Python", "Numpy", "ScikitLearn", "Pandas", "Seaborn", "PyTorch"]
-    },
-    {
-      title: "Generative AI & Vector DBs",
-      icon: <Sparkles className="text-neon-purple" />,
-      skills: ["Langchain", "LlamaIndex", "Chainlit", "HuggingFace", "ChromaDB", "Pinecone", "Weaviate", "Prompt Engineering", "RAG", "Fine Tuning", "AI Agent"]
-    },
-    {
-      title: "Mobile & Web Development",
-      icon: <MonitorSmartphone className="text-neon-lime" />,
-      skills: ["Flutter", "Dart", "FastAPI", "Streamlit", "HTML", "CSS", "Firebase", "Supabase"]
-    },
-    {
-      title: "Tools & Version Control",
-      icon: <GitBranch className="text-blue-500" />,
-      skills: ["Git", "GitHub", "GitLab", "VS Code", "Postman"]
-    }
-  ];
+  const groups = t('skills.groups', { returnObjects: true });
 
   return (
-    <section id="skills" className="py-24 bg-dark/50">
-      <div className="max-w-7xl mx-auto px-6">
-        <h2 className="section-title">
-          <span className="text-neon-cyan italic font-mono">03.</span>
-          {t('skills.title')}
-        </h2>
+    <section id="skills" className="section">
+      <div className="container-page">
+        <SectionHeading label={t('skills.label')} title={t('skills.title')} />
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {skillGroups.map((group, i) => (
-            <motion.div
-              key={group.title}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.1 }}
-              whileHover={{ y: -5 }}
-              className="glass-card neon-border group relative flex flex-col h-full"
-            >
-              <div className="flex items-center gap-3 mb-6">
-                <div className="p-2 bg-white/5 rounded-lg group-hover:bg-white/10 transition-colors">
-                  {group.icon}
+        <div className="grid gap-6 md:grid-cols-2">
+          {groups.map((group, i) => {
+            const Icon = ICONS[group.id];
+            const primary = i < 2;
+            return (
+              <Reveal key={group.id} delay={i * 0.06}>
+                <div className="card h-full border-2 border-ink/10 p-6 transition-colors hover:border-ink sm:p-8">
+                  <div className="mb-6 flex items-center gap-3">
+                    <span
+                      className={`grid h-11 w-11 place-items-center rounded-lg border-2 border-ink ${
+                        primary ? 'bg-brand-600 text-white' : 'bg-flame-100 text-flame-600'
+                      }`}
+                    >
+                      <Icon size={22} />
+                    </span>
+                    <h3 className="text-2xl font-bold text-ink">{group.title}</h3>
+                  </div>
+                  <ul className="flex flex-wrap gap-2">
+                    {group.items.map((skill) => (
+                      <li key={skill} className={primary ? 'chip-brand !text-sm' : 'chip-neutral !text-sm'}>
+                        {skill}
+                      </li>
+                    ))}
+                  </ul>
                 </div>
-                <h3 className="font-bold text-white text-[10px] uppercase tracking-wider">{group.title}</h3>
-              </div>
-              
-              <div className="flex flex-wrap gap-2 mt-auto">
-                {group.skills.map((skill) => (
-                  <span 
-                    key={skill}
-                    className="px-2 py-1 bg-white/5 border border-white/10 rounded-full text-[10px] text-slate-400 hover:border-neon-cyan hover:text-white transition-all cursor-default"
-                  >
-                    {skill}
-                  </span>
-                ))}
-              </div>
-            </motion.div>
-          ))}
+              </Reveal>
+            );
+          })}
         </div>
       </div>
     </section>

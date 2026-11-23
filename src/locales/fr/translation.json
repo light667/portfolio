@@ -1,97 +1,255 @@
 {
+  "meta": {
+    "title": "Light DJOSSOU — AI & Machine Learning Engineer"
+  },
   "nav": {
-    "about": "À Propos",
+    "about": "À propos",
     "experience": "Expérience",
-    "skills": "Compétences",
-    "services": "Services",
     "projects": "Projets",
-    "contact": "Contact"
+    "skills": "Compétences",
+    "contact": "Contact",
+    "cta": "Me contacter",
+    "menu": "Ouvrir le menu",
+    "close": "Fermer le menu",
+    "lang": "Switch to English"
   },
   "hero": {
-    "greeting": "Salut, je suis",
-    "cta": "Me contacter",
-    "download_cv": "Télécharger CV",
-    "title1": "Ingénieur IA Junior",
-    "title2": "Développeur Flutter Junior",
-    "tagline": "Détermination. Innovation. Impact. Je transforme des idées complexes en solutions technologiques d'élite."
+    "eyebrow": "AI & Machine Learning Engineer",
+    "first_names": "Kokou Armand",
+    "lead": "Je conçois des systèmes d'IA de bout en bout : de la préparation des données au modèle évalué, jusqu'aux assistants RAG et aux agents conversationnels qui servent de vrais utilisateurs.",
+    "location": "Lomé, Togo",
+    "status": "Ouvert aux opportunités en IA / ML",
+    "cta_projects": "Voir mes projets",
+    "cta_cv": "Télécharger le CV",
+    "photo_alt": "Portrait de Light DJOSSOU, AI & Machine Learning Engineer",
+    "sticker": "ML · RAG · Agents",
+    "stats": [
+      { "value": "2", "label": "stages IA / ML en 2026" },
+      { "value": "9+", "label": "projets IA & ML" },
+      { "value": "4", "label": "hackathons" }
+    ]
   },
   "about": {
-    "title": "À Propos",
-    "description": "Passionné par l'Intelligence Artificielle et le développement Mobile, je m'engage à fournir des solutions robustes et scalables. Mon approche est guidée par la rigueur scientifique et une volonté constante de repousser les limites de la technologie pour résoudre des problèmes concrets."
+    "label": "01 — À propos",
+    "title": "Des données brutes aux systèmes d'IA utiles.",
+    "p1": "Je suis Light DJOSSOU, AI & Machine Learning Engineer en formation à l'École Nationale Polytechnique de Lomé (Licence IA & Big Data). Mon terrain : le cycle complet d'un projet d'IA, du cadrage du problème jusqu'à un modèle évalué, exposé via une API, un assistant RAG ou un agent conversationnel.",
+    "p2": "En 2026, j'ai enchaîné deux stages en IA / ML : un assistant RAG pour l'ARCEP chez Mawaba Technologies, puis un projet de prédiction du churn chez AnalystLab Africa, tout en développant en équipe chez Neuractif Initiatives. Mon cap : mettre l'IA au service des entreprises et de l'entrepreneuriat africain.",
+    "pipeline_title": "Ma méthode, de bout en bout",
+    "pipeline": [
+      { "step": "Cadrer", "desc": "Objectif métier, variable cible, métriques de succès." },
+      { "step": "Préparer", "desc": "Nettoyage, encodage, outliers, feature engineering." },
+      { "step": "Modéliser", "desc": "ML classique, LLM, pipelines RAG, agents." },
+      { "step": "Évaluer & livrer", "desc": "Métriques adaptées, tests, API FastAPI." }
+    ],
+    "facts": [
+      { "label": "Formation", "value": "Licence IA & Big Data — École Nationale Polytechnique, Lomé" },
+      { "label": "Basé à", "value": "Lomé, Togo" },
+      { "label": "Langues", "value": "Français (natif) · Anglais (intermédiaire, technique)" }
+    ]
+  },
+  "expertise": {
+    "label": "02 — Expertise",
+    "title": "Ce que je construis",
+    "subtitle": "Quatre domaines où j'interviens, du prototype au système exploitable.",
+    "items": [
+      {
+        "title": "Machine Learning prédictif",
+        "desc": "Classification, régression et scoring : pipelines scikit-learn documentés, feature engineering, sélection et comparaison de modèles, métriques choisies selon l'enjeu métier."
+      },
+      {
+        "title": "RAG & IA générative",
+        "desc": "Assistants qui répondent à partir de vos documents, avec des réponses sourcées : extraction et découpage de corpus, bases vectorielles (ChromaDB, Pinecone), LLM (Mistral, Gemini)."
+      },
+      {
+        "title": "Agents conversationnels",
+        "desc": "Des agents qui agissent : dialogue multi-tours avec mémoire, appels d'outils, confirmation explicite avant toute action, passage de relais à un humain."
+      },
+      {
+        "title": "Données & intégration",
+        "desc": "Analyse et préparation de données (SQL, Pandas), exposition des modèles via FastAPI et intégration dans des produits web et mobiles (Supabase, Flutter)."
+      }
+    ]
   },
   "experience": {
-    "title": "Expérience",
-    "exp1": {
-      "role": "AI Intern",
-      "date": "Février 2026 — Présent",
-      "desc": "Formation intensive en IA Générative de A à Z : maîtrise des architectures LLM, conception de pipelines RAG, prompt engineering avancé et développement d'agents IA. Mise en pratique sur des projets concrets intégrant Langchain, ChromaDB et des modèles de pointe."
-    },
-    "exp2": {
-      "role": "Développeur Web & Solutions",
-      "date": "Février 2026 — Présent",
-      "desc": "Contribution volontaire au sein de la team Dev Web & Solutions : conception et développement de sites web professionnels, intégration de solutions digitales et participation active à des projets collaboratifs orientés impact social."
-    }
-  },
-  "skills": {
-    "title": "Expertise Technique"
-  },
-  "services": {
-    "title": "Mes Services",
-    "subtitle": "Des solutions technologiques sur mesure pour propulser votre activité",
-    "s1": {
-      "title": "Chatbots IA & Agents Intelligents",
-      "desc": "Automatisez votre relation client avec des assistants IA sur mesure. Conception d'agents conversationnels intelligents utilisant Langchain, Chainlit et les derniers modèles LLM."
-    },
-    "s2": {
-      "title": "Solutions RAG & Bases Vectorielles",
-      "desc": "Exploitez la puissance de vos données privées grâce à l'IA. Implémentation de systèmes de récupération augmentée avec ChromaDB, Pinecone et Weaviate."
-    },
-    "s3": {
-      "title": "Applications Mobiles",
-      "desc": "Applications cross-platform haute performance avec Flutter & Dart. Des interfaces élégantes et des expériences utilisateur premium sur iOS et Android."
-    },
-    "s4": {
-      "title": "Sites Web & Vitrines",
-      "desc": "Sites professionnels modernes et responsives pour entreprises. Design premium, SEO optimisé et performance garantie pour votre présence en ligne."
-    },
-    "s5": {
-      "title": "Intégration Backend Cloud",
-      "desc": "Architecture backend scalable avec Firebase et Supabase. Authentification, base de données temps réel, stockage et déploiement cloud performant."
-    },
-    "s6": {
-      "title": "Consultation & Stratégie IA",
-      "desc": "Audit technique et conseil stratégique pour intégrer l'IA dans votre entreprise. Identification des opportunités d'automatisation et plan d'implémentation sur mesure."
+    "label": "03 — Expérience",
+    "title": "Expérience professionnelle",
+    "view": "Voir le travail",
+    "items": {
+      "analystlab": {
+        "role": "Machine Learning Engineering Intern",
+        "date": "Août – Sept. 2026",
+        "place": "Stage",
+        "context": "Prédiction du churn client — jeu Telco (7 043 clients, 21 variables)",
+        "points": [
+          "Cadrage métier : définition de la variable cible, choix des métriques et des algorithmes candidats.",
+          "Prétraitement documenté : valeurs manquantes, encodage, mise à l'échelle, traitement des outliers (IQR, Z-score).",
+          "Feature engineering (3 variables créées), sélection de variables, entraînement et comparaison de modèles de classification avec scikit-learn."
+        ]
+      },
+      "mawaba": {
+        "role": "AI Intern",
+        "date": "Fév. – Juin 2026",
+        "place": "Stage · Texas, USA, à distance",
+        "context": "Assistant RAG pour l'ARCEP",
+        "points": [
+          "Conception d'un assistant RAG avec LangChain et ChromaDB, intégrant des LLM (Mistral, Gemini).",
+          "Interrogation en langage naturel d'un corpus documentaire, avec des réponses fondées sur les sources.",
+          "Approfondissement des architectures LLM, des pipelines RAG, du prompt engineering et de l'analyse de données."
+        ]
+      },
+      "neuractif": {
+        "role": "Développeur logiciel volontaire",
+        "date": "Depuis janv. 2026",
+        "place": "Bénévolat",
+        "context": "Organisation à vocation numérique et éducative",
+        "points": [
+          "Développement logiciel et IA en équipe, en mode projet agile.",
+          "Contribution à des projets numériques à visée éducative et sociale."
+        ]
+      }
     }
   },
   "projects": {
-    "title": "Projets Récents",
-    "view_live": "Voir le projet",
-    "view_code": "Code source",
-    "under_construction": "D'autres projets sont en cours de construction..."
+    "label": "04 — Projets",
+    "title": "Projets IA sélectionnés",
+    "subtitle": "Machine Learning, RAG, agents et produits IA : des projets menés en stage, en hackathon ou en autonomie.",
+    "all_github": "Tout voir sur GitHub",
+    "filters": {
+      "all": "Tous",
+      "ml": "Machine Learning",
+      "rag": "RAG & LLM",
+      "agent": "Agents",
+      "product": "Produits IA"
+    },
+    "featured": "Projet phare",
+    "wip": "En cours",
+    "private": "Projet en entreprise",
+    "live": "Démo",
+    "code": "Code",
+    "items": {
+      "oren": {
+        "title": "Oren",
+        "kind": "Agent IA · Hackathon Meta AI",
+        "desc": "Plateforme d'assistants IA pour les petites entreprises d'Afrique francophone. À partir d'une photo du menu et d'un message vocal, le commerçant obtient en moins d'une heure un assistant qui répond aux clients en français, compose la commande, attend une confirmation explicite, puis l'envoie au tableau de bord.",
+        "highlights": [
+          "Architecture multi-tenant, Row Level Security PostgreSQL sur chaque table",
+          "Registre d'outils par capacité : l'agent ne reçoit que les outils autorisés",
+          "Onboarding multimodal : vision sur photo de menu et transcription vocale"
+        ]
+      },
+      "arcep": {
+        "title": "Assistant RAG ARCEP",
+        "kind": "RAG · Stage Mawaba Technologies",
+        "desc": "Interrogation en langage naturel du corpus documentaire de l'ARCEP, avec des réponses fondées sur les sources."
+      },
+      "churn": {
+        "title": "Customer Churn Prediction",
+        "kind": "ML · Stage AnalystLab Africa",
+        "desc": "Pipeline complet sur 7 043 clients télécom : nettoyage, 3 variables créées, encodage, traitement des outliers, sélection de variables et comparaison de modèles de classification."
+      },
+      "credit": {
+        "title": "Credit Scoring",
+        "kind": "ML · Risque de crédit",
+        "desc": "Prédiction du défaut de paiement sur Home Credit Default Risk (~8 % de défauts) : feature engineering multi-tables, LightGBM, explicabilité SHAP, seuil de décision fondé sur un coût métier, servi par une API."
+      },
+      "otr": {
+        "title": "RAG fiscal OTR",
+        "kind": "RAG · Fiscalité togolaise",
+        "desc": "Assistant sur la fiscalité togolaise. Pipeline d'extraction PDF → Markdown qui respecte la structure juridique (livres, titres, articles, notes) pour un découpage fiable et des citations précises. 61 tests automatisés."
+      },
+      "belvedere": {
+        "title": "RAG Hôtel Belvédère",
+        "kind": "SQL + LLM · Data & IA Vacances 2026",
+        "desc": "Système qui combine requêtes SQL et LLM pour répondre aux questions des clients à partir des données de l'hôtel."
+      },
+      "orderbot": {
+        "title": "LIGHTFOOD OrderBot",
+        "kind": "Agent conversationnel",
+        "desc": "Agent de prise de commande pour restaurant : dialogue multi-tours avec mémoire, sessions isolées par utilisateur, calcul automatique du total, prompt engineering."
+      },
+      "pulse": {
+        "title": "Pulse AI",
+        "kind": "Produit IA · Africa Developers Hackathon",
+        "desc": "Analyse de symptômes par IA, orientation vers l'établissement de santé adapté et soutien en santé mentale pour l'Afrique de l'Ouest, en français, anglais, haoussa, yoruba et éwé."
+      },
+      "flyai": {
+        "title": "Fly AI",
+        "kind": "Produit IA · EdTech",
+        "desc": "Plateforme qui aide les étudiants africains à trouver des bourses, améliorer leurs candidatures et maximiser leurs chances grâce à des recommandations personnalisées."
+      }
+    }
+  },
+  "skills": {
+    "label": "05 — Compétences",
+    "title": "Boîte à outils technique",
+    "groups": [
+      {
+        "id": "ml",
+        "title": "Machine Learning",
+        "items": ["scikit-learn", "PyTorch", "Random Forest", "Gradient Boosting", "LightGBM", "Classification", "Régression", "Évaluation de modèles", "Feature engineering", "SHAP"]
+      },
+      {
+        "id": "genai",
+        "title": "IA générative & RAG",
+        "items": ["LLM (Mistral, Gemini)", "LangChain", "LlamaIndex", "ChromaDB", "Pinecone", "Hugging Face", "Prompt engineering", "Fine-tuning", "Agents & tool calling", "Chainlit"]
+      },
+      {
+        "id": "data",
+        "title": "Data",
+        "items": ["Python", "SQL", "Pandas", "NumPy", "Matplotlib", "Seaborn", "Jupyter", "Nettoyage & prétraitement"]
+      },
+      {
+        "id": "dev",
+        "title": "Développement & outils",
+        "items": ["FastAPI", "API REST", "Supabase", "Docker", "pytest", "Git", "GitHub", "GitLab", "Flutter / Dart", "Java", "C"]
+      }
+    ]
+  },
+  "achievements": {
+    "label": "06 — Hackathons & certifications",
+    "title": "Compétitions et certifications",
+    "hackathons_title": "Hackathons",
+    "hackathons": ["AI4Youth", "TogoCodeRun", "Challenge Smart Junior Enterprise", "Africa Developers Hackathon"],
+    "certs_title": "Certifications",
+    "certs": [
+      { "name": "AI4Youth", "org": "Neuractif Initiatives", "year": "2025" },
+      { "name": "TechFuPro", "org": "Université de Lomé", "year": "2025" },
+      { "name": "Smart Junior Enterprise", "org": "FLAMBEAU EEJ", "year": "2025" }
+    ],
+    "interests_title": "Centres d'intérêt",
+    "interests": ["IA appliquée aux entreprises", "Entrepreneuriat", "Hackathons", "Open source", "Engagement numérique et éducatif"]
   },
   "contact": {
-    "title": "Contactez-moi",
+    "label": "07 — Contact",
+    "title": "Parlons de votre projet IA.",
+    "intro": "Stage, poste, mission ou collaboration autour de l'IA et du Machine Learning : écrivez-moi, je réponds rapidement.",
     "name": "Nom complet",
+    "name_ph": "Votre nom",
     "email": "Adresse email",
-    "type": "Type de demande",
-    "type_collab": "Collaboration sur un projet",
-    "type_service": "Demande de service",
+    "email_ph": "vous@entreprise.com",
+    "type": "Objet",
+    "type_select": "Sélectionnez",
+    "type_job": "Opportunité (stage / poste)",
+    "type_collab": "Projet IA / collaboration",
     "type_other": "Autre",
-    "message": "Votre message",
+    "message": "Message",
+    "message_ph": "Décrivez le contexte, le besoin et l'échéance…",
     "send": "Envoyer le message",
-    "sending": "Envoi en cours...",
-    "success": "Message envoyé avec succès ! Je vous répondrai rapidement.",
-    "error": "Une erreur est survenue. Réessayez ou contactez-moi par email.",
-    "intro": "Prêt à propulser votre prochain projet avec une IA sur-mesure, un site web professionnel ou une application mobile d'excellence ?",
-    "motto": "Détermination. Innovation. Impact."
+    "sending": "Envoi en cours…",
+    "success": "Message envoyé. Je vous réponds rapidement.",
+    "error": "L'envoi a échoué. Réessayez ou écrivez-moi directement par email."
   },
   "cookie": {
-    "message": "Ce site utilise des cookies et Firebase Analytics pour améliorer votre expérience.",
+    "message": "Ce site utilise Firebase Analytics pour mesurer l'audience de façon anonyme.",
+    "privacy_link": "Politique de confidentialité",
     "accept": "Accepter",
-    "decline": "Refuser",
-    "privacy_link": "Politique de Confidentialité"
+    "decline": "Refuser"
   },
   "footer": {
-    "rights": "Tous droits réservés."
+    "tagline": "AI & Machine Learning Engineer · Lomé, Togo",
+    "rights": "Tous droits réservés.",
+    "privacy": "Confidentialité",
+    "terms": "Conditions d'utilisation",
+    "top": "Haut de page"
   }
 }

@@ -3,45 +3,52 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    
+    <meta name="theme-color" content="#7C3AED" />
+
     <!-- Primary Meta Tags -->
-    <title>DJOSSOU Light | Ingénieur IA & Développeur Mobile - Portfolio</title>
-    <meta name="title" content="DJOSSOU Light | Ingénieur IA & Développeur Mobile - Portfolio" />
-    <meta name="description" content="Portfolio professionnel de Kokou Armand Light DJOSSOU — Ingénieur IA Junior, Développeur Flutter & Web. Spécialisé en chatbots IA, solutions RAG, applications mobiles et sites web professionnels." />
-    <meta name="keywords" content="DJOSSOU Light, Kokou Armand Light DJOSSOU, Light DJOSSOU, ingénieur IA, développeur Flutter, chatbot IA, RAG, Langchain, applications mobiles, développeur web, Togo, Afrique, AI Engineer, Flutter Developer" />
+    <title>Light DJOSSOU — AI & Machine Learning Engineer</title>
+    <meta name="title" content="Light DJOSSOU — AI & Machine Learning Engineer" />
+    <meta name="description" content="Portfolio de Kokou Armand Light DJOSSOU, AI & Machine Learning Engineer à Lomé (Togo). Systèmes d'IA de bout en bout : Machine Learning, RAG, LLM et agents conversationnels." />
+    <meta name="keywords" content="Light DJOSSOU, Kokou Armand Light DJOSSOU, AI Engineer, Machine Learning Engineer, ingénieur IA, Machine Learning, RAG, LLM, LangChain, agents IA, scikit-learn, data science, Lomé, Togo, Afrique" />
     <meta name="author" content="Kokou Armand Light DJOSSOU" />
     <meta name="robots" content="index, follow" />
-    <link rel="canonical" href="https://light-djos.web.app/" />
+    <link rel="canonical" href="https://lightdjossou-portfolio.vercel.app/" />
 
     <!-- Favicon -->
-    <link rel="icon" type="image/png" href="/favicon.png" />
-    <link rel="apple-touch-icon" href="/favicon.png" />
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    <link rel="icon" type="image/png" sizes="96x96" href="/favicon.png" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
 
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://light-djos.web.app/" />
-    <meta property="og:title" content="DJOSSOU Light | Ingénieur IA & Développeur Mobile" />
-    <meta property="og:description" content="Ingénieur IA Junior & Développeur Flutter. Spécialisé en chatbots IA, solutions RAG, applications mobiles et sites web. Détermination. Innovation. Impact." />
-    <meta property="og:image" content="https://light-djos.web.app/og-image.png" />
+    <!-- Open Graph -->
+    <meta property="og:type" content="profile" />
+    <meta property="og:url" content="https://lightdjossou-portfolio.vercel.app/" />
+    <meta property="og:title" content="Light DJOSSOU — AI & Machine Learning Engineer" />
+    <meta property="og:description" content="Machine Learning, RAG et agents conversationnels : des systèmes d'IA de bout en bout, de la donnée au produit." />
+    <meta property="og:image" content="https://lightdjossou-portfolio.vercel.app/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Light DJOSSOU — AI & Machine Learning Engineer" />
     <meta property="og:locale" content="fr_FR" />
-    <meta property="og:site_name" content="DJOSSOU Light Portfolio" />
+    <meta property="og:locale:alternate" content="en_US" />
+    <meta property="og:site_name" content="Light DJOSSOU" />
 
     <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image" />
-    <meta property="twitter:url" content="https://light-djos.web.app/" />
-    <meta property="twitter:title" content="DJOSSOU Light | Ingénieur IA & Développeur Mobile" />
-    <meta property="twitter:description" content="Ingénieur IA Junior & Développeur Flutter. Spécialisé en chatbots IA, solutions RAG, applications mobiles et sites web." />
-    <meta property="twitter:image" content="https://light-djos.web.app/og-image.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Light DJOSSOU — AI & Machine Learning Engineer" />
+    <meta name="twitter:description" content="Machine Learning, RAG et agents conversationnels : des systèmes d'IA de bout en bout, de la donnée au produit." />
+    <meta name="twitter:image" content="https://lightdjossou-portfolio.vercel.app/og-image.png" />
 
     <!-- Google Search Console Verification -->
     <meta name="google-site-verification" content="Wsdb0nWbYaxm9BnJ7YD2yMRN6N4fjyZPKfSAPhd9JIc" />
     <meta name="google-site-verification" content="KH-iwi4DEGZF66JVRJCTTIjbailqFkO7t2eHV-NezTA" />
     <meta name="google-site-verification" content="hdlQLF6-ipcXm3us6rdruj3BRLbGdpIBNQKIx-ptYMQ" />
 
-    <!-- Google Fonts: Inter -->
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+    <link rel="preload" as="image" href="/photo.jpg" />
 
     <!-- Structured Data (JSON-LD) -->
     <script type="application/ld+json">
@@ -49,24 +56,27 @@
       "@context": "https://schema.org",
       "@type": "Person",
       "name": "Kokou Armand Light DJOSSOU",
-      "alternateName": "DJOSSOU Light",
-      "url": "https://light-djos.web.app",
-      "jobTitle": "Junior AI Engineer & Flutter Developer",
+      "alternateName": "Light DJOSSOU",
+      "url": "https://lightdjossou-portfolio.vercel.app",
+      "image": "https://lightdjossou-portfolio.vercel.app/photo.jpg",
+      "jobTitle": "AI & Machine Learning Engineer",
+      "address": { "@type": "PostalAddress", "addressLocality": "Lomé", "addressCountry": "TG" },
+      "affiliation": { "@type": "CollegeOrUniversity", "name": "École Nationale Polytechnique de Lomé" },
       "sameAs": [
         "https://github.com/light667",
         "https://www.linkedin.com/in/kokou-light-djossou-90216233b/",
         "https://www.instagram.com/l_ight.ai/"
       ],
-      "knowsAbout": ["Artificial Intelligence", "Machine Learning", "Flutter", "Mobile Development", "Web Development", "RAG", "LLM", "Chatbots"],
-      "description": "Ingénieur IA Junior et Développeur Mobile spécialisé en solutions d'intelligence artificielle, applications Flutter et développement web."
+      "knowsAbout": ["Machine Learning", "Artificial Intelligence", "Retrieval-Augmented Generation", "Large Language Models", "AI Agents", "Data Science", "scikit-learn", "LangChain", "Python"],
+      "description": "AI & Machine Learning Engineer : Machine Learning, RAG, LLM et agents conversationnels, de la donnée au produit."
     }
     </script>
-    <script type="module" crossorigin src="/assets/index-uq9saOPq.js"></script>
-    <link rel="stylesheet" crossorigin href="/assets/index-BGF_GIwL.css">
+    <script type="module" crossorigin src="/assets/index-BZHfpP4D.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-Ctot1Xtb.css">
   </head>
-  <body class="bg-dark text-slate-200 selection:bg-neon-cyan/30 selection:text-neon-cyan">
+  <body>
     <div id="root"></div>
 
-    <!-- Firebase Analytics -->
+    <!-- Firebase Analytics: only loaded after the visitor accepts the cookie notice -->
   </body>
 </html>

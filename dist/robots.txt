@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 Disallow: /api/
 
-Sitemap: https://light-djos.web.app/sitemap.xml
+Sitemap: https://lightdjossou-portfolio.vercel.app/sitemap.xml

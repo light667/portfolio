@@ -1,97 +1,255 @@
 {
+  "meta": {
+    "title": "Light DJOSSOU — AI & Machine Learning Engineer"
+  },
   "nav": {
     "about": "About",
     "experience": "Experience",
-    "skills": "Skills",
-    "services": "Services",
     "projects": "Projects",
-    "contact": "Contact"
+    "skills": "Skills",
+    "contact": "Contact",
+    "cta": "Get in touch",
+    "menu": "Open menu",
+    "close": "Close menu",
+    "lang": "Passer en français"
   },
   "hero": {
-    "greeting": "Hi, I'm",
-    "cta": "Contact me",
-    "download_cv": "Download CV",
-    "title1": "Junior AI Engineer",
-    "title2": "Junior Flutter Developer",
-    "tagline": "Determination. Innovation. Impact. I transform complex ideas into elite technological solutions."
+    "eyebrow": "AI & Machine Learning Engineer",
+    "first_names": "Kokou Armand",
+    "lead": "I build end-to-end AI systems: from data preparation to evaluated models, all the way to RAG assistants and conversational agents that serve real users.",
+    "location": "Lomé, Togo",
+    "status": "Open to AI / ML opportunities",
+    "cta_projects": "View my projects",
+    "cta_cv": "Download résumé",
+    "photo_alt": "Portrait of Light DJOSSOU, AI & Machine Learning Engineer",
+    "sticker": "ML · RAG · Agents",
+    "stats": [
+      { "value": "2", "label": "AI / ML internships in 2026" },
+      { "value": "9+", "label": "AI & ML projects" },
+      { "value": "4", "label": "hackathons" }
+    ]
   },
   "about": {
-    "title": "About",
-    "description": "Passionate about Artificial Intelligence and Mobile development, I am committed to delivering robust and scalable solutions. My approach is driven by scientific rigor and a constant desire to push the boundaries of technology to solve real-world problems."
+    "label": "01 — About",
+    "title": "From raw data to AI systems that matter.",
+    "p1": "I'm Light DJOSSOU, an AI & Machine Learning Engineer in training at the École Nationale Polytechnique in Lomé (BSc in AI & Big Data). My focus is the full lifecycle of an AI project: framing the problem, then delivering an evaluated model served through an API, a RAG assistant or a conversational agent.",
+    "p2": "In 2026 I completed two AI / ML internships back to back: a RAG assistant for ARCEP at Mawaba Technologies, then a customer churn prediction project at AnalystLab Africa, while building software in a team at Neuractif Initiatives. My goal: put AI to work for businesses and African entrepreneurship.",
+    "pipeline_title": "My end-to-end approach",
+    "pipeline": [
+      { "step": "Frame", "desc": "Business goal, target variable, success metrics." },
+      { "step": "Prepare", "desc": "Cleaning, encoding, outliers, feature engineering." },
+      { "step": "Model", "desc": "Classical ML, LLMs, RAG pipelines, agents." },
+      { "step": "Evaluate & ship", "desc": "Fit-for-purpose metrics, tests, FastAPI services." }
+    ],
+    "facts": [
+      { "label": "Education", "value": "BSc in AI & Big Data — École Nationale Polytechnique, Lomé" },
+      { "label": "Based in", "value": "Lomé, Togo" },
+      { "label": "Languages", "value": "French (native) · English (intermediate, technical)" }
+    ]
+  },
+  "expertise": {
+    "label": "02 — Expertise",
+    "title": "What I build",
+    "subtitle": "Four areas where I deliver, from prototype to working system.",
+    "items": [
+      {
+        "title": "Predictive Machine Learning",
+        "desc": "Classification, regression and scoring: documented scikit-learn pipelines, feature engineering, model selection and comparison, metrics chosen for the business problem."
+      },
+      {
+        "title": "RAG & Generative AI",
+        "desc": "Assistants that answer from your documents with grounded, sourced answers: corpus extraction and chunking, vector databases (ChromaDB, Pinecone), LLMs (Mistral, Gemini)."
+      },
+      {
+        "title": "Conversational agents",
+        "desc": "Agents that take action: multi-turn dialogue with memory, tool calling, explicit confirmation before any action, hand-off to a human."
+      },
+      {
+        "title": "Data & integration",
+        "desc": "Data analysis and preparation (SQL, Pandas), serving models through FastAPI and integrating them into web and mobile products (Supabase, Flutter)."
+      }
+    ]
   },
   "experience": {
-    "title": "Experience",
-    "exp1": {
-      "role": "AI Intern",
-      "date": "February 2026 — Present",
-      "desc": "Intensive Generative AI training from A to Z: mastering LLM architectures, designing RAG pipelines, advanced prompt engineering and AI agent development. Hands-on experience on real-world projects integrating Langchain, ChromaDB and cutting-edge models."
-    },
-    "exp2": {
-      "role": "Web Developer & Solutions",
-      "date": "February 2026 — Present",
-      "desc": "Voluntary contribution within the Web Dev & Solutions team: designing and developing professional websites, integrating digital solutions and actively participating in collaborative projects focused on social impact."
-    }
-  },
-  "skills": {
-    "title": "Technical Expertise"
-  },
-  "services": {
-    "title": "My Services",
-    "subtitle": "Custom technological solutions to propel your business forward",
-    "s1": {
-      "title": "AI Chatbots & Intelligent Agents",
-      "desc": "Automate your customer relations with custom AI assistants. Design of intelligent conversational agents using Langchain, Chainlit and the latest LLM models."
-    },
-    "s2": {
-      "title": "RAG Solutions & Vector Databases",
-      "desc": "Harness the power of your private data with AI. Implementation of retrieval-augmented generation systems with ChromaDB, Pinecone and Weaviate."
-    },
-    "s3": {
-      "title": "Mobile Applications",
-      "desc": "High-performance cross-platform apps with Flutter & Dart. Elegant interfaces and premium user experiences on iOS and Android."
-    },
-    "s4": {
-      "title": "Websites & Business Pages",
-      "desc": "Modern, responsive professional websites for businesses. Premium design, SEO optimized and guaranteed performance for your online presence."
-    },
-    "s5": {
-      "title": "Cloud Backend Integration",
-      "desc": "Scalable backend architecture with Firebase and Supabase. Authentication, real-time database, storage and high-performance cloud deployment."
-    },
-    "s6": {
-      "title": "AI Consulting & Strategy",
-      "desc": "Technical audit and strategic consulting to integrate AI into your business. Identifying automation opportunities and custom implementation plan."
+    "label": "03 — Experience",
+    "title": "Professional experience",
+    "view": "See the work",
+    "items": {
+      "analystlab": {
+        "role": "Machine Learning Engineering Intern",
+        "date": "Aug – Sep 2026",
+        "place": "Internship",
+        "context": "Customer churn prediction — Telco dataset (7,043 customers, 21 features)",
+        "points": [
+          "Business framing: defined the target variable, evaluation metrics and candidate algorithms.",
+          "Documented preprocessing: missing values, encoding, scaling, outlier treatment (IQR, Z-score).",
+          "Feature engineering (3 new features), feature selection, training and comparison of classification models with scikit-learn."
+        ]
+      },
+      "mawaba": {
+        "role": "AI Intern",
+        "date": "Feb – Jun 2026",
+        "place": "Internship · Texas, USA, remote",
+        "context": "RAG assistant for ARCEP",
+        "points": [
+          "Built a RAG assistant with LangChain and ChromaDB, integrating LLMs (Mistral, Gemini).",
+          "Natural-language querying of a document corpus with source-grounded answers.",
+          "Deepened skills in LLM architectures, RAG pipelines, prompt engineering and data analysis."
+        ]
+      },
+      "neuractif": {
+        "role": "Volunteer Software Developer",
+        "date": "Since Jan 2026",
+        "place": "Volunteer",
+        "context": "Digital and educational non-profit",
+        "points": [
+          "Software and AI development in a team, in an agile project setting.",
+          "Contributing to digital projects with an educational and social purpose."
+        ]
+      }
     }
   },
   "projects": {
-    "title": "Recent Projects",
-    "view_live": "View Project",
-    "view_code": "Source Code",
-    "under_construction": "Other projects are currently under construction..."
+    "label": "04 — Projects",
+    "title": "Selected AI projects",
+    "subtitle": "Machine Learning, RAG, agents and AI products, built during internships, hackathons or on my own.",
+    "all_github": "See everything on GitHub",
+    "filters": {
+      "all": "All",
+      "ml": "Machine Learning",
+      "rag": "RAG & LLM",
+      "agent": "Agents",
+      "product": "AI products"
+    },
+    "featured": "Featured project",
+    "wip": "In progress",
+    "private": "Client project",
+    "live": "Demo",
+    "code": "Code",
+    "items": {
+      "oren": {
+        "title": "Oren",
+        "kind": "AI agent · Meta AI Hackathon",
+        "desc": "AI assistant platform for small businesses in French-speaking Africa. From a photo of the menu and a voice message, an owner gets an assistant in under an hour that answers customers in French, composes the order, waits for explicit confirmation, then sends it to a live dashboard.",
+        "highlights": [
+          "Multi-tenant architecture, PostgreSQL Row Level Security on every table",
+          "Capability-based tool registry: the agent only gets the tools it is allowed",
+          "Multimodal onboarding: vision on menu photos and voice transcription"
+        ]
+      },
+      "arcep": {
+        "title": "ARCEP RAG assistant",
+        "kind": "RAG · Mawaba Technologies internship",
+        "desc": "Natural-language querying of ARCEP's document corpus, with answers grounded in the sources."
+      },
+      "churn": {
+        "title": "Customer Churn Prediction",
+        "kind": "ML · AnalystLab Africa internship",
+        "desc": "End-to-end pipeline on 7,043 telecom customers: cleaning, 3 engineered features, encoding, outlier treatment, feature selection and comparison of classification models."
+      },
+      "credit": {
+        "title": "Credit Scoring",
+        "kind": "ML · Credit risk",
+        "desc": "Loan default prediction on Home Credit Default Risk (~8% defaults): multi-table feature engineering, LightGBM, SHAP explainability, a decision threshold based on business cost, served through an API."
+      },
+      "otr": {
+        "title": "OTR tax RAG",
+        "kind": "RAG · Togolese tax law",
+        "desc": "Assistant for Togolese tax law. A PDF → Markdown extraction pipeline that preserves the legal structure (books, titles, articles, footnotes) for reliable chunking and precise citations. 61 automated tests."
+      },
+      "belvedere": {
+        "title": "Hôtel Belvédère RAG",
+        "kind": "SQL + LLM · Data & AI Summer 2026",
+        "desc": "A system combining SQL queries and an LLM to answer guests' questions from the hotel's own data."
+      },
+      "orderbot": {
+        "title": "LIGHTFOOD OrderBot",
+        "kind": "Conversational agent",
+        "desc": "Restaurant ordering agent: multi-turn dialogue with memory, per-user session isolation, automatic total calculation, prompt engineering."
+      },
+      "pulse": {
+        "title": "Pulse AI",
+        "kind": "AI product · Africa Developers Hackathon",
+        "desc": "AI symptom analysis, routing to the right healthcare facility and mental health support for West Africa, in French, English, Hausa, Yoruba and Ewe."
+      },
+      "flyai": {
+        "title": "Fly AI",
+        "kind": "AI product · EdTech",
+        "desc": "A platform that helps African students find scholarships, strengthen their applications and maximise their chances with personalised recommendations."
+      }
+    }
+  },
+  "skills": {
+    "label": "05 — Skills",
+    "title": "Technical toolbox",
+    "groups": [
+      {
+        "id": "ml",
+        "title": "Machine Learning",
+        "items": ["scikit-learn", "PyTorch", "Random Forest", "Gradient Boosting", "LightGBM", "Classification", "Regression", "Model evaluation", "Feature engineering", "SHAP"]
+      },
+      {
+        "id": "genai",
+        "title": "Generative AI & RAG",
+        "items": ["LLMs (Mistral, Gemini)", "LangChain", "LlamaIndex", "ChromaDB", "Pinecone", "Hugging Face", "Prompt engineering", "Fine-tuning", "Agents & tool calling", "Chainlit"]
+      },
+      {
+        "id": "data",
+        "title": "Data",
+        "items": ["Python", "SQL", "Pandas", "NumPy", "Matplotlib", "Seaborn", "Jupyter", "Data cleaning & preprocessing"]
+      },
+      {
+        "id": "dev",
+        "title": "Engineering & tools",
+        "items": ["FastAPI", "REST APIs", "Supabase", "Docker", "pytest", "Git", "GitHub", "GitLab", "Flutter / Dart", "Java", "C"]
+      }
+    ]
+  },
+  "achievements": {
+    "label": "06 — Hackathons & certifications",
+    "title": "Competitions and certifications",
+    "hackathons_title": "Hackathons",
+    "hackathons": ["AI4Youth", "TogoCodeRun", "Smart Junior Enterprise Challenge", "Africa Developers Hackathon"],
+    "certs_title": "Certifications",
+    "certs": [
+      { "name": "AI4Youth", "org": "Neuractif Initiatives", "year": "2025" },
+      { "name": "TechFuPro", "org": "University of Lomé", "year": "2025" },
+      { "name": "Smart Junior Enterprise", "org": "FLAMBEAU EEJ", "year": "2025" }
+    ],
+    "interests_title": "Interests",
+    "interests": ["Applied AI for business", "Entrepreneurship", "Hackathons", "Open source", "Digital & educational outreach"]
   },
   "contact": {
-    "title": "Get in Touch",
+    "label": "07 — Contact",
+    "title": "Let's talk about your AI project.",
+    "intro": "Internship, full-time role, freelance work or collaboration in AI and Machine Learning: drop me a line, I reply quickly.",
     "name": "Full name",
+    "name_ph": "Your name",
     "email": "Email address",
-    "type": "Request type",
-    "type_collab": "Project collaboration",
-    "type_service": "Service request",
+    "email_ph": "you@company.com",
+    "type": "Subject",
+    "type_select": "Select",
+    "type_job": "Opportunity (internship / role)",
+    "type_collab": "AI project / collaboration",
     "type_other": "Other",
-    "message": "Your message",
-    "send": "Send Message",
-    "sending": "Sending...",
-    "success": "Message sent successfully! I'll get back to you soon.",
-    "error": "An error occurred. Please try again or contact me by email.",
-    "intro": "Ready to power your next project with custom AI, a professional website or a premium mobile application?",
-    "motto": "Determination. Innovation. Impact."
+    "message": "Message",
+    "message_ph": "Describe the context, the need and the timeline…",
+    "send": "Send message",
+    "sending": "Sending…",
+    "success": "Message sent. I'll get back to you shortly.",
+    "error": "Sending failed. Please try again or email me directly."
   },
   "cookie": {
-    "message": "This site uses cookies and Firebase Analytics to improve your experience.",
+    "message": "This site uses Firebase Analytics to measure audience anonymously.",
+    "privacy_link": "Privacy policy",
     "accept": "Accept",
-    "decline": "Decline",
-    "privacy_link": "Privacy Policy"
+    "decline": "Decline"
   },
   "footer": {
-    "rights": "All rights reserved."
+    "tagline": "AI & Machine Learning Engineer · Lomé, Togo",
+    "rights": "All rights reserved.",
+    "privacy": "Privacy",
+    "terms": "Terms of use",
+    "top": "Back to top"
   }
 }
