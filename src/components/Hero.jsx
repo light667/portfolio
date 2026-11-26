@@ -1,146 +1,101 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import { motion } from 'framer-motion';
-import { ArrowDownRight, Download } from 'lucide-react';
-import { PROFILE, MARQUEE } from '../data/portfolio';
+import FadeIn from './ui/FadeIn';
+import Magnet from './ui/Magnet';
+import { ContactButton } from './ui/Buttons';
 import NeuralBackground from './fx/NeuralBackground';
-import TypedRoles from './fx/TypedRoles';
-import Magnetic from './fx/Magnetic';
-import TrainingCard from './fx/TrainingCard';
-
-const ease = [0.22, 1, 0.36, 1];
-
-const Letters = ({ text, delay = 0, className = '' }) => (
-  <span className={`block overflow-hidden pb-[0.06em] ${className}`} aria-hidden="true">
-    {text.split('').map((ch, i) => (
-      <motion.span
-        key={i}
-        className="inline-block"
-        initial={{ y: '105%' }}
-        animate={{ y: 0 }}
-        transition={{ duration: 0.8, delay: delay + i * 0.045, ease }}
-      >
-        {ch}
-      </motion.span>
-    ))}
-  </span>
-);
+import { SocialLinks } from './ui/Buttons';
 
 const Hero = () => {
-  const { t } = useTranslation();
-  const roles = t('hero.roles', { returnObjects: true });
+  const { t, i18n } = useTranslation();
+  const lang = i18n.language === 'en' ? 'en' : 'fr';
+  const greetingWords = t('hero.greeting').split(' ');
+  const greetingEnd = greetingWords.pop();
+  const greetingStart = greetingWords.join(' ');
+
+  const links = [
+    { label: t('nav.about'), href: '#about' },
+    { label: t('nav.projects'), href: '#projects' },
+    { label: t('nav.experience'), href: '#experience' },
+    { label: t('nav.contact'), href: '#contact' },
+  ];
 
   return (
-    <section id="top" className="relative overflow-hidden">
-      <div className="absolute inset-0 [mask-image:linear-gradient(to_bottom,black_55%,transparent)]">
+    <section id="top" className="relative flex h-screen min-h-[600px] flex-col" style={{ overflowX: 'clip' }}>
+      <div className="absolute inset-0 [mask-image:linear-gradient(to_bottom,black_40%,transparent_95%)]">
         <NeuralBackground />
       </div>
-      <div className="pointer-events-none absolute -left-40 top-20 h-[28rem] w-[28rem] rounded-full bg-brand-300/30 blur-3xl" aria-hidden="true" />
-      <div className="pointer-events-none absolute -right-32 bottom-10 h-80 w-80 rounded-full bg-flame-200/50 blur-3xl" aria-hidden="true" />
 
-      <div className="container-page relative grid items-center gap-14 pb-20 pt-28 md:pt-36 lg:grid-cols-12 lg:gap-10 lg:pb-28">
-        <div className="lg:col-span-7">
-          <motion.p
-            initial={{ opacity: 0, x: -16 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6, ease }}
-            className="eyebrow mb-3 text-brand-700"
-          >
-            <span className="h-[2px] w-8 bg-flame-500" />
-            {t('hero.eyebrow')}
-          </motion.p>
-
-          <h1 className="font-display font-bold leading-[0.92] tracking-tight text-ink">
-            <span className="sr-only">Kokou Armand Light DJOSSOU</span>
-            <motion.span
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.6, delay: 0.1 }}
-              className="block text-2xl font-medium text-slate-500 sm:text-3xl"
-              aria-hidden="true"
+      <FadeIn as="nav" delay={0} y={-20} className="relative z-20 flex flex-wrap items-center gap-x-8 gap-y-3 px-5 pt-6 sm:flex-nowrap sm:px-6 md:px-10 md:pt-8" aria-label="Navigation">
+        <div className="flex w-full items-center justify-between gap-3 sm:w-auto sm:flex-1">
+          {links.map((l) => (
+            <a
+              key={l.href}
+              href={l.href}
+              className="whitespace-nowrap text-[11px] font-medium uppercase tracking-wide text-mist transition-opacity duration-200 hover:opacity-70 sm:text-sm sm:tracking-wider md:text-lg lg:text-[1.4rem]"
             >
-              {t('hero.first_names')}
-            </motion.span>
-            <Letters text="Light" delay={0.15} className="mt-2 text-[3.4rem] sm:text-7xl lg:text-[5.5rem]" />
-            <Letters text="DJOSSOU" delay={0.35} className="text-[3.4rem] text-brand-600 sm:text-7xl lg:text-[5.5rem]" />
-          </h1>
-
-          <motion.p
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.9 }}
-            className="mt-5 h-8 font-mono text-base text-ink sm:text-lg"
-          >
-            <TypedRoles roles={roles} />
-          </motion.p>
-
-          <motion.p
-            initial={{ opacity: 0, y: 16 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.7, ease }}
-            className="mt-5 max-w-xl text-lg leading-relaxed text-slate-600 sm:text-xl"
-          >
-            {t('hero.lead')}
-          </motion.p>
-
-          <motion.div
-            initial={{ opacity: 0, y: 16 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.85, ease }}
-            className="mt-9 flex flex-col gap-4 sm:flex-row"
-          >
-            <Magnetic>
-              <a href="#projects" className="btn-cta w-full sm:w-auto">
-                {t('hero.cta_projects')}
-                <ArrowDownRight size={18} />
-              </a>
-            </Magnetic>
-            <Magnetic strength={0.18}>
-              <a href={PROFILE.cv} download={PROFILE.cvFileName} className="btn-ghost w-full sm:w-auto">
-                {t('hero.cta_cv')}
-                <Download size={18} />
-              </a>
-            </Magnetic>
-          </motion.div>
-        </div>
-
-        <motion.div
-          initial={{ opacity: 0, y: 30, rotate: -3 }}
-          animate={{ opacity: 1, y: 0, rotate: 0 }}
-          transition={{ duration: 0.9, delay: 0.25, ease }}
-          className="relative mx-auto w-full max-w-[22rem] sm:max-w-sm lg:col-span-5 lg:max-w-none lg:pl-6"
-        >
-          <div className="absolute inset-0 translate-x-4 translate-y-4 rounded-2xl border-2 border-ink bg-brand-600 lg:left-6" />
-          <div className="relative overflow-hidden rounded-2xl border-2 border-ink bg-brand-100">
-            <img
-              src="/photo.jpg"
-              alt={t('hero.photo_alt')}
-              width="900"
-              height="1080"
-              fetchpriority="high"
-              className="aspect-[4/5] w-full object-cover object-[50%_20%]"
-            />
-            <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(rgba(30,27,75,0.06)_1px,transparent_1px)] bg-[size:100%_4px]" aria-hidden="true" />
-            <span className="pointer-events-none absolute inset-x-0 h-16 animate-scan bg-gradient-to-b from-transparent via-brand-500/25 to-transparent" aria-hidden="true">
-              <span className="absolute inset-x-0 top-1/2 h-px bg-brand-300" />
-            </span>
-          </div>
-
-          <div className="absolute -left-3 top-[46%] animate-float lg:top-8 rounded-lg border-2 border-ink bg-flame-500 px-3 py-2 font-mono text-xs font-medium text-white shadow-hard-sm [rotate:-6deg] sm:-left-6">
-            {t('hero.sticker')}
-          </div>
-        </motion.div>
-      </div>
-
-      <div className="relative border-y-2 border-ink bg-brand-600 py-4 text-white" aria-hidden="true">
-        <div className="flex w-max animate-marquee gap-10 whitespace-nowrap font-mono text-sm uppercase tracking-widest">
-          {[...MARQUEE, ...MARQUEE].map((item, i) => (
-            <span key={i} className="flex items-center gap-10">
-              {item}
-              <span className="text-flame-200">✦</span>
-            </span>
+              {l.label}
+            </a>
           ))}
         </div>
+        <div className="ml-auto flex items-center gap-2 md:gap-3">
+          <SocialLinks />
+          <button
+            type="button"
+            onClick={() => i18n.changeLanguage(lang === 'fr' ? 'en' : 'fr')}
+            aria-label={t('nav.lang')}
+            className="ml-1 whitespace-nowrap text-[11px] font-medium uppercase tracking-wide text-mist transition-opacity duration-200 hover:opacity-70 sm:text-sm sm:tracking-wider md:text-lg lg:text-[1.4rem]"
+          >
+            <span className={lang === 'fr' ? '' : 'opacity-40'}>FR</span>
+            <span className="opacity-40"> / </span>
+            <span className={lang === 'en' ? '' : 'opacity-40'}>EN</span>
+          </button>
+        </div>
+      </FadeIn>
+
+      <div className="relative z-0 overflow-hidden">
+        <FadeIn as="h1" delay={0.15} y={40} className="hero-heading mt-6 w-full whitespace-nowrap text-center font-black uppercase leading-none tracking-tight text-[21vw] sm:mt-4 sm:text-[13vw] md:-mt-5 md:text-[14vw] lg:text-[14.6vw]">
+          {greetingStart}
+          <br className="sm:hidden" />
+          <span className="hidden sm:inline"> </span>
+          {greetingEnd}
+        </FadeIn>
+      </div>
+
+      <div className="relative z-20 mt-auto flex items-end justify-between gap-4 bg-gradient-to-t from-night via-night/85 to-transparent px-6 pb-7 pt-16 sm:bg-none sm:pb-8 sm:pt-0 md:px-10 md:pb-10">
+        <FadeIn
+          as="p"
+          delay={0.35}
+          y={20}
+          className="max-w-[160px] font-light uppercase leading-snug tracking-wide text-mist sm:max-w-[220px] md:max-w-[260px]"
+          style={{ fontSize: 'clamp(0.75rem, 1.4vw, 1.5rem)' }}
+        >
+          {t('hero.tagline')}
+        </FadeIn>
+        <FadeIn delay={0.5} y={20}>
+          <ContactButton />
+        </FadeIn>
+      </div>
+
+      <div className="absolute bottom-0 left-1/2 z-10 w-[300px] -translate-x-1/2 sm:w-[320px] md:w-[380px] lg:w-[420px] 2xl:w-[460px]">
+      <div
+        className="pointer-events-none absolute inset-x-[-25%] bottom-[-10%] top-[10%] -z-10 rounded-full opacity-80 blur-3xl"
+        style={{ background: 'radial-gradient(closest-side, rgba(182,0,168,0.55), rgba(118,33,176,0.35) 55%, transparent)' }}
+        aria-hidden="true"
+      />
+      <FadeIn delay={0.6} y={30}>
+        <Magnet padding={150} strength={3}>
+          <img
+            src="/portrait.png"
+            alt={t('hero.photo_alt')}
+            width="365"
+            height="478"
+            fetchpriority="high"
+            draggable="false"
+            className="w-full select-none [-webkit-mask-image:linear-gradient(to_bottom,black_72%,transparent)] [mask-image:linear-gradient(to_bottom,black_72%,transparent)] sm:[-webkit-mask-image:linear-gradient(to_bottom,black_85%,transparent)] sm:[mask-image:linear-gradient(to_bottom,black_85%,transparent)]"
+          />
+        </Magnet>
+      </FadeIn>
       </div>
     </section>
   );

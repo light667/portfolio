@@ -3,92 +3,92 @@
 @tailwind utilities;
 
 @layer base {
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+  html,
+  body,
+  #root {
+    background: #0c0c0c;
+  }
+
   html {
     scroll-behavior: smooth;
-    scroll-padding-top: 5rem;
   }
 
   body {
-    @apply bg-cream font-sans text-ink antialiased;
-  }
-
-  h1, h2, h3, h4 {
-    @apply font-display tracking-tight;
+    @apply m-0 p-0 font-sans text-mist antialiased;
   }
 
   ::selection {
-    @apply bg-brand-600 text-white;
+    background: #b600a8;
+    color: #fff;
   }
 
   :focus-visible {
-    @apply outline-none ring-2 ring-brand-600 ring-offset-2 ring-offset-cream;
+    @apply outline-none ring-2 ring-mist ring-offset-2 ring-offset-night;
   }
 }
 
 @layer components {
+  /* Silver gradient type used by every big heading */
+  .hero-heading {
+    background: linear-gradient(180deg, #646973 0%, #bbccd7 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .heading-xl {
+    @apply font-black uppercase leading-none tracking-tight;
+    font-size: clamp(3rem, 12vw, 160px);
+  }
+
   .container-page {
-    @apply mx-auto w-full max-w-6xl px-4 sm:px-6;
+    @apply mx-auto w-full max-w-6xl px-5 sm:px-8 md:px-10;
   }
 
-  .section {
-    @apply py-20 md:py-28;
+  .section-dark {
+    @apply relative z-10 -mt-10 rounded-t-[40px] bg-night px-5 py-20 sm:-mt-12 sm:rounded-t-[50px] sm:px-8 sm:py-24 md:-mt-14 md:rounded-t-[60px] md:px-10 md:py-32;
   }
 
-  .eyebrow {
-    @apply inline-flex items-center gap-2 font-mono text-xs font-medium uppercase tracking-[0.18em];
+  .section-light {
+    @apply relative z-10 -mt-10 rounded-t-[40px] bg-white px-5 py-20 text-night sm:-mt-12 sm:rounded-t-[50px] sm:px-8 sm:py-24 md:-mt-14 md:rounded-t-[60px] md:px-10 md:py-32;
   }
 
-  .section-title {
-    @apply font-display text-3xl font-bold leading-[1.1] tracking-tight sm:text-4xl md:text-5xl;
+  .btn-gradient {
+    @apply inline-flex shrink-0 items-center justify-center gap-2 whitespace-nowrap rounded-full px-8 py-3 text-xs font-medium uppercase tracking-widest text-white transition-transform duration-200 hover:scale-[1.03] sm:px-10 sm:py-3.5 sm:text-sm md:px-12 md:py-4 md:text-base;
+    background: linear-gradient(123deg, #18011f 7%, #b600a8 37%, #7621b0 72%, #be4c00 100%);
+    box-shadow: 0px 4px 4px rgba(181, 1, 167, 0.25), inset 4px 4px 12px #7721b1;
+    outline: 2px solid #fff;
+    outline-offset: -3px;
   }
 
-  .btn {
-    @apply inline-flex items-center justify-center gap-2 rounded-lg px-5 py-3 text-sm font-semibold transition duration-150 sm:text-base;
+  .btn-ghost-dark {
+    @apply inline-flex items-center justify-center gap-2 rounded-full border-2 border-mist px-6 py-2.5 text-sm font-medium uppercase tracking-widest text-mist transition-colors duration-200 hover:bg-mist/10 sm:px-8 sm:py-3;
   }
 
-  .btn-cta {
-    @apply btn border-2 border-ink bg-flame-500 text-white shadow-hard hover:-translate-y-0.5 hover:bg-flame-600 active:translate-x-[2px] active:translate-y-[2px] active:shadow-none;
+  .btn-ghost-light {
+    @apply inline-flex items-center justify-center gap-2 rounded-full border-2 border-night px-6 py-2.5 text-sm font-medium uppercase tracking-widest text-night transition-colors duration-200 hover:bg-night/5 sm:px-8 sm:py-3;
   }
 
-  .btn-primary {
-    @apply btn bg-brand-600 text-white hover:-translate-y-0.5 hover:bg-brand-700;
+  .tile {
+    @apply relative h-[195px] w-[300px] shrink-0 overflow-hidden rounded-2xl border border-white/10 bg-carbon sm:h-[270px] sm:w-[420px];
   }
 
-  .btn-ghost {
-    @apply btn border-2 border-brand-600 bg-white text-brand-700 hover:bg-brand-50;
+  .chip-dark {
+    @apply inline-flex items-center rounded-full border border-mist/25 px-3 py-1 text-xs font-light uppercase tracking-wider text-mist;
   }
 
-  .card {
-    @apply rounded-xl border border-slate-200 bg-white p-6;
+  .chip-light {
+    @apply inline-flex items-center rounded-full border border-night/20 px-3 py-1 text-xs font-light uppercase tracking-wider text-night;
   }
 
-  .card-hard {
-    @apply rounded-xl border-2 border-ink bg-white shadow-hard;
-  }
-
-  .chip {
-    @apply inline-flex items-center rounded-full px-3 py-1 text-xs font-medium;
-  }
-
-  .chip-brand {
-    @apply chip bg-brand-100 text-brand-700;
-  }
-
-  .chip-flame {
-    @apply chip bg-flame-100 text-flame-700;
-  }
-
-  .chip-neutral {
-    @apply chip border border-slate-200 bg-white text-slate-600;
-  }
-
-  .field {
-    @apply w-full rounded-lg border border-slate-300 bg-white px-4 py-3 text-ink placeholder:text-slate-400 transition focus:border-brand-600 focus:outline-none focus:ring-2 focus:ring-brand-600/30;
-  }
-
-  .dot-grid {
-    background-image: radial-gradient(rgba(30, 27, 75, 0.12) 1px, transparent 1px);
-    background-size: 22px 22px;
+  .field-dark {
+    @apply w-full rounded-2xl border border-mist/20 bg-white/[0.03] px-5 py-3.5 font-light text-mist placeholder:text-steel transition focus:border-mist/60 focus:outline-none;
   }
 }
 

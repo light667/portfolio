@@ -95,8 +95,3 @@ export const PROJECTS = [
     live: 'https://fly-ai-page.vercel.app/',
   },
 ];
-
-export const MARQUEE = [
-  'Python', 'scikit-learn', 'PyTorch', 'LangChain', 'LlamaIndex', 'ChromaDB', 'Pinecone',
-  'Hugging Face', 'Mistral', 'Gemini', 'FastAPI', 'SQL', 'Pandas', 'LightGBM', 'SHAP', 'Supabase',
-];

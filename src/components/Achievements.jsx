@@ -1,8 +1,6 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import { Trophy, Award, Heart } from 'lucide-react';
-import SectionHeading from './ui/SectionHeading';
-import Reveal from './ui/Reveal';
+import FadeIn from './ui/FadeIn';
 
 const Achievements = () => {
   const { t } = useTranslation();
@@ -11,63 +9,42 @@ const Achievements = () => {
   const interests = t('achievements.interests', { returnObjects: true });
 
   return (
-    <section id="achievements" className="section border-y-2 border-ink bg-flame-50">
-      <div className="container-page">
-        <SectionHeading label={t('achievements.label')} title={t('achievements.title')} />
+    <section id="achievements" className="relative bg-white px-5 pb-28 text-night sm:px-8 sm:pb-32 md:px-10 md:pb-40">
+      <div className="mx-auto grid max-w-5xl gap-6 md:grid-cols-12">
+        <FadeIn className="relative overflow-hidden rounded-[32px] p-7 text-white sm:rounded-[40px] sm:p-10 md:col-span-7" style={{ background: 'linear-gradient(123deg, #18011F 7%, #B600A8 45%, #7621B0 78%, #BE4C00 110%)' }}>
+          <p className="text-sm font-light uppercase tracking-widest text-white/70">{t('achievements.hackathons_title')}</p>
+          <ul className="mt-6 space-y-1">
+            {hackathons.map((h) => (
+              <li key={h} className="font-black uppercase leading-tight tracking-tight" style={{ fontSize: 'clamp(1.4rem, 3.2vw, 2.6rem)' }}>
+                {h}
+              </li>
+            ))}
+          </ul>
+        </FadeIn>
 
-        <div className="grid gap-6 lg:grid-cols-12">
-          <Reveal className="lg:col-span-7">
-            <div className="h-full rounded-xl border-2 border-ink bg-flame-500 p-6 text-white shadow-hard sm:p-8">
-              <div className="mb-6 flex items-center gap-3">
-                <Trophy size={24} />
-                <h3 className="text-2xl font-bold">{t('achievements.hackathons_title')}</h3>
-              </div>
-              <ul className="divide-y-2 divide-white/25">
-                {hackathons.map((h, i) => (
-                  <li key={h} className="flex items-baseline gap-4 py-4 first:pt-0 last:pb-0">
-                    <span className="font-mono text-sm text-flame-100">0{i + 1}</span>
-                    <span className="font-display text-xl font-bold sm:text-2xl">{h}</span>
-                  </li>
-                ))}
-              </ul>
+        <div className="grid gap-6 md:col-span-5">
+          <FadeIn delay={0.1} className="rounded-[32px] border border-night/15 p-7 sm:rounded-[40px] sm:p-9">
+            <p className="text-sm font-light uppercase tracking-widest text-night/50">{t('achievements.certs_title')}</p>
+            <ul className="mt-5 space-y-4">
+              {certs.map((c) => (
+                <li key={c.name} className="flex items-start justify-between gap-4">
+                  <div>
+                    <p className="font-medium uppercase">{c.name}</p>
+                    <p className="text-sm font-light text-night/60">{c.org}</p>
+                  </div>
+                  <span className="font-light text-night/50">{c.year}</span>
+                </li>
+              ))}
+            </ul>
+          </FadeIn>
+          <FadeIn delay={0.2} className="rounded-[32px] border border-night/15 p-7 sm:rounded-[40px] sm:p-9">
+            <p className="text-sm font-light uppercase tracking-widest text-night/50">{t('achievements.interests_title')}</p>
+            <div className="mt-5 flex flex-wrap gap-2">
+              {interests.map((it) => (
+                <span key={it} className="chip-light">{it}</span>
+              ))}
             </div>
-          </Reveal>
-
-          <div className="grid gap-6 lg:col-span-5">
-            <Reveal delay={0.08}>
-              <div className="card-hard h-full p-6 sm:p-8">
-                <div className="mb-5 flex items-center gap-3">
-                  <Award size={22} className="text-brand-600" />
-                  <h3 className="text-xl font-bold text-ink">{t('achievements.certs_title')}</h3>
-                </div>
-                <ul className="space-y-4">
-                  {certs.map((c) => (
-                    <li key={c.name} className="flex items-start justify-between gap-4">
-                      <div>
-                        <p className="font-semibold text-ink">{c.name}</p>
-                        <p className="text-sm text-slate-500">{c.org}</p>
-                      </div>
-                      <span className="chip-brand">{c.year}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </Reveal>
-
-            <Reveal delay={0.14}>
-              <div className="card h-full border-2 border-ink/10 p-6 sm:p-8">
-                <div className="mb-4 flex items-center gap-3">
-                  <Heart size={20} className="text-flame-600" />
-                  <h3 className="text-xl font-bold text-ink">{t('achievements.interests_title')}</h3>
-                </div>
-                <ul className="flex flex-wrap gap-2">
-                  {interests.map((it) => (
-                    <li key={it} className="chip-flame">{it}</li>
-                  ))}
-                </ul>
-              </div>
-            </Reveal>
-          </div>
+          </FadeIn>
         </div>
       </div>
     </section>

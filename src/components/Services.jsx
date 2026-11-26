@@ -1,52 +1,43 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import { BrainCircuit, FileSearch, Bot, DatabaseZap } from 'lucide-react';
-import SectionHeading from './ui/SectionHeading';
-import Reveal from './ui/Reveal';
-
-const ICONS = [BrainCircuit, FileSearch, Bot, DatabaseZap];
+import FadeIn from './ui/FadeIn';
 
 const Services = () => {
   const { t } = useTranslation();
   const items = t('expertise.items', { returnObjects: true });
 
   return (
-    <section id="expertise" className="section relative overflow-hidden border-y-2 border-ink bg-brand-600">
-      <div className="pointer-events-none absolute -right-24 -top-24 h-72 w-72 rounded-full border-2 border-white/15" aria-hidden="true" />
-      <div className="pointer-events-none absolute -right-8 -top-8 h-40 w-40 rounded-full border-2 border-white/15" aria-hidden="true" />
+    <section id="expertise" className="section-light">
+      <FadeIn as="h2" y={40} className="heading-xl mb-16 text-center text-night sm:mb-20 md:mb-28">
+        {t('expertise.heading')}
+      </FadeIn>
 
-      <div className="container-page relative">
-        <SectionHeading
-          tone="dark"
-          label={t('expertise.label')}
-          title={t('expertise.title')}
-          subtitle={t('expertise.subtitle')}
-        />
-
-        <div className="grid gap-6 sm:grid-cols-2">
-          {items.map((item, i) => {
-            const Icon = ICONS[i];
-            return (
-              <Reveal key={item.title} delay={i * 0.06}>
-                <article className="group h-full rounded-xl border-2 border-ink bg-white p-6 shadow-hard transition-transform duration-200 hover:-translate-y-1 sm:p-8">
-                  <div className="mb-6 flex items-center justify-between">
-                    <span
-                      className={`grid h-12 w-12 place-items-center rounded-lg border-2 border-ink transition-transform duration-300 group-hover:-rotate-6 group-hover:scale-110 ${
-                        i % 2 === 0 ? 'bg-brand-100 text-brand-700' : 'bg-flame-100 text-flame-600'
-                      }`}
-                    >
-                      <Icon size={24} />
-                    </span>
-                    <span className="font-mono text-sm text-slate-400">0{i + 1}</span>
-                  </div>
-                  <h3 className="mb-3 text-2xl font-bold text-ink">{item.title}</h3>
-                  <p className="leading-relaxed text-slate-600">{item.desc}</p>
-                </article>
-              </Reveal>
-            );
-          })}
-        </div>
-      </div>
+      <ul className="mx-auto max-w-5xl">
+        {items.map((item, i) => (
+          <FadeIn
+            as="li"
+            key={item.title}
+            delay={i * 0.1}
+            className="group flex items-start gap-6 border-t py-8 sm:gap-10 sm:py-10 md:gap-14 md:py-12"
+            style={{ borderColor: 'rgba(12, 12, 12, 0.15)' }}
+          >
+            <span
+              className="shrink-0 font-black leading-none text-night transition-colors duration-300 group-hover:text-magenta"
+              style={{ fontSize: 'clamp(3rem, 10vw, 140px)' }}
+            >
+              0{i + 1}
+            </span>
+            <div className="flex flex-col gap-2 pt-2 sm:gap-3 md:pt-4">
+              <h3 className="font-medium uppercase text-night" style={{ fontSize: 'clamp(1rem, 2.2vw, 2.1rem)' }}>
+                {item.title}
+              </h3>
+              <p className="max-w-2xl font-light leading-relaxed text-night/60" style={{ fontSize: 'clamp(0.85rem, 1.6vw, 1.25rem)' }}>
+                {item.desc}
+              </p>
+            </div>
+          </FadeIn>
+        ))}
+      </ul>
     </section>
   );
 };

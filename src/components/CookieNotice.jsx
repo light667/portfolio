@@ -45,23 +45,23 @@ const CookieNotice = () => {
           role="dialog"
           aria-live="polite"
         >
-          <div className="mx-auto flex max-w-3xl flex-col gap-4 rounded-xl border-2 border-ink bg-white p-4 text-ink shadow-hard sm:flex-row sm:items-center">
+          <div className="mx-auto flex max-w-3xl flex-col gap-4 rounded-[28px] border border-mist/20 bg-carbon/95 p-4 text-mist shadow-2xl shadow-black/50 backdrop-blur-xl sm:flex-row sm:items-center">
             <div className="flex flex-1 items-start gap-3">
-              <span className="grid h-9 w-9 shrink-0 place-items-center rounded-lg bg-brand-100 text-brand-700">
+              <span className="grid h-9 w-9 shrink-0 place-items-center rounded-full bg-magenta/20 text-mist">
                 <Cookie size={18} />
               </span>
-              <p className="text-sm leading-relaxed text-slate-600">
+              <p className="text-sm font-light leading-relaxed text-mist/70">
                 {t('cookie.message')}{' '}
-                <Link to="/privacy" className="font-medium text-brand-700 hover:underline">
+                <Link to="/privacy" className="font-medium text-mist underline-offset-2 hover:underline">
                   {t('cookie.privacy_link')}
                 </Link>
               </p>
             </div>
             <div className="flex shrink-0 gap-2">
-              <button type="button" onClick={() => save('declined')} className="btn flex-1 border-2 border-ink/15 !px-4 !py-2 !text-sm hover:border-ink sm:flex-none">
+              <button type="button" onClick={() => save('declined')} className="flex-1 rounded-full border border-mist/30 px-4 py-2 text-xs font-medium uppercase tracking-widest text-mist transition-colors hover:bg-mist/10 sm:flex-none">
                 {t('cookie.decline')}
               </button>
-              <button type="button" onClick={() => save('accepted')} className="btn-primary flex-1 !px-4 !py-2 !text-sm sm:flex-none">
+              <button type="button" onClick={() => save('accepted')} className="btn-gradient flex-1 !px-5 !py-2 !text-xs sm:flex-none">
                 {t('cookie.accept')}
               </button>
             </div>

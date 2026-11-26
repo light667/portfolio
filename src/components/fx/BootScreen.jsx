@@ -47,27 +47,26 @@ const BootScreen = () => {
       {show && (
         <motion.div
           key="boot"
-          className="fixed inset-0 z-[100] flex items-center justify-center bg-ink px-6"
+          className="fixed inset-0 z-[100] flex items-center justify-center bg-night px-6"
           exit={{ clipPath: 'inset(0 0 100% 0)' }}
           transition={{ duration: 0.6, ease: [0.76, 0, 0.24, 1] }}
           onClick={() => setShow(false)}
           aria-hidden="true"
         >
           <div className="w-full max-w-md font-mono text-sm text-white">
-            <p className="mb-6 font-display text-3xl font-bold tracking-tight">
-              Light <span className="text-brand-300">DJOSSOU</span>
-              <span className="text-flame-500">.</span>
+            <p className="hero-heading mb-6 font-sans text-3xl font-black uppercase tracking-tight">
+              Light DJOSSOU
             </p>
             <div className="space-y-1.5 text-white/70">
               {LINES.slice(0, lineCount).map((line, i) => (
                 <p key={line}>
-                  <span className="text-flame-500">&gt;</span> {line}
+                  <span className="text-[#ff9b5c]">&gt;</span> {line}
                   {i === lineCount - 1 && progress < 1 ? '…' : <span className="text-green-400"> ✓</span>}
                 </p>
               ))}
             </div>
             <div className="mt-6 flex items-center gap-3">
-              <span className="text-brand-300">
+              <span className="text-magenta">
                 [{'█'.repeat(filled)}
                 <span className="text-white/20">{'░'.repeat(BARS - filled)}</span>]
               </span>

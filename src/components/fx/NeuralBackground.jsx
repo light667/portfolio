@@ -2,9 +2,9 @@ import React, { useEffect, useRef } from 'react';
 
 // Interactive neural-network field: drifting nodes, weighted edges, forward-pass pulses
 // travelling along edges, and a cursor that lights up the neurons it gets close to.
-const INK = '30, 27, 75';
-const VIOLET = '124, 58, 237';
-const ORANGE = '249, 115, 22';
+const INK = '215, 226, 234';
+const VIOLET = '182, 0, 168';
+const ORANGE = '255, 140, 60';
 
 const NeuralBackground = ({ className = '' }) => {
   const canvasRef = useRef(null);
@@ -66,7 +66,7 @@ const NeuralBackground = ({ className = '' }) => {
         const a = nodes[i];
         const b = nodes[j];
         const heat = Math.max(a.hot, b.hot);
-        const alpha = (1 - d / LINK) * (0.14 + heat * 0.5);
+        const alpha = (1 - d / LINK) * (0.07 + heat * 0.5);
         ctx.strokeStyle = heat > 0.05 ? `rgba(${VIOLET}, ${alpha})` : `rgba(${INK}, ${alpha})`;
         ctx.lineWidth = heat > 0.05 ? 1.1 : 0.8;
         ctx.beginPath();
@@ -106,7 +106,7 @@ const NeuralBackground = ({ className = '' }) => {
       }
 
       for (const n of nodes) {
-        const fill = n.hot > 0.05 ? `rgba(${VIOLET}, ${0.55 + n.hot * 0.45})` : `rgba(${INK}, 0.35)`;
+        const fill = n.hot > 0.05 ? `rgba(${VIOLET}, ${0.55 + n.hot * 0.45})` : `rgba(${INK}, 0.22)`;
         ctx.fillStyle = fill;
         ctx.beginPath();
         ctx.arc(n.x, n.y, n.r + n.hot * 2.2, 0, Math.PI * 2);

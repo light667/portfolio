@@ -22,14 +22,14 @@ const PortfolioPage = () => {
   const scaleX = useSpring(scrollYProgress, { stiffness: 120, damping: 30, restDelta: 0.001 });
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-night" style={{ overflowX: 'clip' }}>
       <a
         href="#about"
-        className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[70] focus:rounded-lg focus:bg-ink focus:px-4 focus:py-2 focus:text-white"
+        className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[70] focus:rounded-lg focus:bg-magenta focus:px-4 focus:py-2 focus:text-white"
       >
         Skip to content
       </a>
-      <motion.div className="fixed inset-x-0 top-0 z-50 h-1 origin-left bg-flame-500" style={{ scaleX }} />
+      <motion.div className="fixed inset-x-0 top-0 z-[60] h-1 origin-left bg-gradient-to-r from-magenta via-grape to-ember" style={{ scaleX }} />
 
       <BootScreen />
       <Header />
@@ -38,9 +38,9 @@ const PortfolioPage = () => {
         <Hero />
         <About />
         <Services />
-        <Pipelines />
-        <Experience />
         <Projects />
+        <Experience />
+        <Pipelines />
         <Skills />
         <Achievements />
         <Contact />
